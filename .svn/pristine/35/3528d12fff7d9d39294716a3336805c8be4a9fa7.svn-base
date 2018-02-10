@@ -1,0 +1,170 @@
+.authbox{
+    width: 550px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 150px;
+    border-radius: 5px;
+    padding: 15px 25px;
+    text-align: center;
+    padding-top: 35px;
+    border: 1px solid #fffffe;
+    transition: all ease-in-out 5s;
+}
+
+form#adlgform {
+    color: #fff;
+}
+
+.content.adminlg{
+    width:100%;
+}
+form#adlgform .ccha {
+    width: 120px;
+    position: absolute;
+    margin-top: -2px;
+    right: -133px;
+}
+
+form#adlgform .ccha img {
+    border-radius: 5px;
+}
+
+#adlgform.cform .frow input + i.fa{
+    position: absolute;
+    opacity: 0;
+    transition: all 0.1s ease-in;
+    left: 0;
+    background: #2196F3;
+    color: #fff;
+    display: block;
+    padding: 4px;
+}
+
+#adlgform .frow {
+    padding: 0;
+    margin: unset;
+    width: 258px;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+}
+
+#adlgform .frow input[type=submit] {
+    width: 100px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background: #564033;
+    color: #fff;
+}
+
+#adlgform .frow input {
+    margin-bottom: 20px;
+}
+
+
+#adlgform .frow input[name=umb]:focus,#adlgform .frow input[name=ucc]:focus{
+    /*text-indent: 15px;
+    transition: all 0.25s ease-in-out;*/
+}
+.cform .cctips{
+        margin-left: 159px;
+}
+#adlgform.cform .frow #scc{
+        padding: 8px 12px;
+    border-radius: 5px;
+    background: #a78c3f;
+    color: #fff;
+    position: absolute;
+    right: -98px;
+}
+#adlgform .frow input[name=umb]:focus + i.fa,#adlgform .frow input[name=ucc]:focus + i.fa {
+    /*opacity: 0;
+    -moz-opacity: 0;
+    transition: all 0.25s ease-in-out;*/
+}
+
+#adlgform.cform .frow input{
+    transition: all 0.2s ease-out;
+}
+
+#adlgform.cform .frow input + i.fa{
+    left:20px;
+    opacity: 1;
+    -moz-opacity: 1;
+    transition: all 0.2s ease-out;
+}
+
+#adlgform.cform .frow input[name=umb]:focus + i.fa,#adlgform.cform .frow input[name=ucc]:focus + i.fa{
+    /*opacity: 0;
+    left:0;
+    -moz-opacity: 0;
+    transition: all 0.25s ease-in-out;*/
+}
+
+#adlgform form input.finput {
+    text-indent: 35px;
+}
+
+#adlgform .frow .tips{
+margin-top: 34px;
+    margin-left: 105px;
+    width: 250px;
+}
+
+.content.cauth {
+    background: url("/static/img/admin_bg.jpg") no-repeat center center;
+    background-attachment: fixed;
+    transition: all 3s ease-in;
+    -moz-transition: all 5s ease-in-out;
+    -ms-transition: all 5s ease-in-out;
+    -webkit-transition: all 5s ease-in-out;
+    -o-transition: all 5s ease-in-out;
+    width: 100%;
+    padding-bottom: 100%; /*fake height*/
+
+}
+
+.adminlg .frow .cctips{
+    margin-left: 110px;
+    width: 199px;
+}
+
+/* authbox */
+.authbox .nul li{
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+    vertical-align: top;
+}
+.authbox .nul{
+    position: absolute;
+    top: -39px;
+    right: -1px;
+}
+
+.authbox .nul li {
+    background: unset;
+    padding: 10px 12px;
+
+}
+.authbox .nul li a{
+    color:#fff;
+}
+.authbox .nul li.active{
+    background: #d3d3d3;
+
+}
+.authbox .nul li.active a{
+     color:#555;
+}
+
+.authbox .shtabs{
+    display: none;
+}
+.authbox .shtabs.active{
+    display: block;
+}
+

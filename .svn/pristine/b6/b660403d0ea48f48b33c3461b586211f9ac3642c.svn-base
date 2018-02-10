@@ -1,0 +1,219 @@
+{% extends "admin_panel.html" %}
+{% block content %}
+    <h3>订单列表</h3>
+    <form method="get" id="osmsf">
+        <label></label><i class="fa fa-search fa-lg"></i><input type="text" name="osms" placeholder="搜索订单"/>
+        <select name="mtype" id="mtype">
+            <option value="租用" selected>租用</option>
+            <option value="托管">托管</option>
+            <option value="试用">试用</option>
+        </select>
+        <label>到期</label><input type="checkbox"/>
+        <input type="submit" value="搜索"/>
+    </form>
+
+    <table class="orders_tb">
+        <tbody>
+
+        <tr class="title">
+            <td>编号</td>
+            <td>ip地址</td>
+             <td>订单金额</td>
+            <td>客户账号</td>
+            <td>出机时间</td>
+            <td>到期时间</td>
+            <td>所属业务</td>
+            <td>备注</td>
+            <td>操作</td>
+        </tr>
+
+        {% if orders %}
+        {% from datetime import datetime %}
+        {% for i in orders %}
+            <tr class="mlist error">
+                <td class="tid">{{i[0]}}</td>
+                <td><input type="text" disabled="disabled" value="{{i[1]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[3] if i[3] else 0}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[2]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{ datetime.strftime(i[4],'%Y/%m/%d')}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{ datetime.strftime(i[5],'%Y/%m/%d') }}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[7]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[9] if i[9] else ''}}"/></td>
+                <td><span class="modify">详情</span>|{% if ctype in [4,5] %}<span class="renew">续期</span>|{% end %}<span class="remove">删除</span></td>
+            </tr>
+        {% end %}
+        {% end %}
+        </tbody>
+    </table>
+    <ul class="pagination">
+
+        {% if pages and 1< pages <= 24 %}
+        {% for i in range(1,pages+1) %}
+            {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a></li>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a></li>
+                    {% end %}
+            {% end %}
+        {% end %}
+
+        {% if pages and pages > 24 %}
+        {# ------ #}
+        <li><a href="/admin/orders?offset={{1}}&osms={{kwds}}" class=""><<</a></li>
+
+        {% if offset > 1%}
+            <li><a href="/admin/orders?offset={{offset-1}}&osms={{kwds}}" class=""><</a></li>
+        {% end %}
+        {% if offset < pages/3 %}
+            {% if (pages/3 - offset) >6 and offset >9  %}
+               {% for i in range(1,5) %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a>
+                    {% end %}
+                    <li><a href="javascript:;" class="empty">...</a>
+                    {% for i in range(offset-2,offset+3) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a>
+                    {% end %}
+                    {% end %}
+            {% elif (pages/3 - offset) > 6 and offset <=9  %}
+                {% for i in range(1,offset+4) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a>
+                    {% end %}
+                {% end %}
+        {% elif (pages/3 - offset) <= 6 and offset>9  %}
+            {% for i in range(1,5) %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a>
+                    {% end %}
+                    <li><a href="javascript:;" class="empty">...</a>
+                    {% for i in range(offset-3,offset+3) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a>
+                    {% end %}
+                    {% end %}
+        {% elif (pages/3 - offset) <= 6 and offset <= 9  %}
+            {% for i in range(1,offset+4) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a>
+                    {% end %}
+                {% end %}
+    {% end %}
+
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages/2-3,pages/2+3) %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}">{{i}}</a></li>
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages-3,pages+1) %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}">{{i}}</a></li>
+        {% end %}
+        {% end %} {# end if offset 1/3 #}
+
+        {# ------ #}
+
+        {# 1/3 ~ 2/3 part #}
+        {% if pages/3 <= offset <= pages/3*2 %}
+        {% for i in range(1,5) %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}">{{i}}</a></li>
+        {% end %}{# end for #}
+
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(offset-3,offset+4) %}
+        {% if i == offset %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a></li>
+            {% else %}
+        <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}">{{i}}</a></li>
+        {% end %} {# end if #}
+
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages-3,pages+1) %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}">{{i}}</a></li>
+        {% end %} {# end for #}
+        {% end %} {# end if offset 2/3 #}
+
+        {# ------ #}
+
+        {# pages-3 part #}
+        {% if pages/3*2 < offset <= pages %}
+        {% for i in range(1,6) %}
+            {% if i == offset %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a></li>
+            {% else %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a></li>
+            {% end %}
+        {% end %}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages/2-3,pages/2+3) %}
+            {% if i == offset %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a></li>
+            {% else %}
+            <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a></li>
+            {% end %}
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% if pages - offset < 6 %}
+            {% for i in range(offset-2,pages+1) %}
+            {% if i == offset %}
+                <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a></li>
+            {% else %}
+                <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a></li>
+            {% end %}
+            {% end %}
+        {% else %}
+            {% for i in range(offset-2,offset+2) %}
+                {% if i == offset %}
+                <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a></li>
+                {% else %}
+                <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a></li>
+                {% end %}
+            {% end %}
+            <li><a href="javascript:;" class="empty">...</a></li>
+            {% for i in range(pages-3,pages+1) %}
+                {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="active">{{i}}</a></li>
+                {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&osms={{kwds}}" class="">{{i}}</a></li>
+                {% end %}
+            {% end %} {# end for #}
+        {% end %}
+        {% end %} {# end if if 2/3*pages<= offset <= pages% #}
+        {% if offset < pages %}
+        <li><a href="/admin/orders?offset={{offset+1}}&osms={{kwds}}" class="">> </a></li>
+        {% end %}
+        <li><a href="/admin/orders?offset={{pages}}&osms={{kwds}}" class="">>></a></li>
+        {% end %} {# end if pages #}
+    </ul>
+<div class="modal-ct modal-ct-s-4">
+        <img class="mclose 3" src="{{static_url("img/close.png")}}"/>
+        <h2>订单详情</h2>
+        <div class="modal-dt">
+            <form id="oform" class="mform" action="/admin/orders/">
+                {% raw xsrf_form_html() %}
+                <div class="data">
+                </div>
+                <div class="frow" style="text-align: center;">
+                    <input type="submit" class="n_addbtn sbtn" value="提交" style="background-color: #17578d;color:#fff;"/>
+
+                    <div class="tips"><span></span></div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+{% end %}

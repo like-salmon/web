@@ -1,0 +1,46 @@
+{% extends "admin_panel.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{static_url("css/bootstrap.min.css")}}"/>
+<link rel="stylesheet" href="{{static_url("css/summernote.css")}}"/>
+{% end %}
+
+{% block content%}
+<style>
+    a{
+        color:#00B1FB;
+    }
+</style>
+
+<h3 class="ntitle">新闻/公告发布</h3>
+<form id="pform" class="mform" method="post" enctype="multipart/form-data">
+    {% raw xsrf_form_html() %}
+    <div class="frow">
+        <label>标题:</label><input type="text" id="title" name="title" placeholder="请输入标题"/>
+    </div>
+    <div class="frow">
+        <label>类型:</label><select id="ntype" name="ntype"><option value="1">新闻</option><option value="2">公告</option> </select>
+    </div>
+
+    <textarea name="contents" class="summernote" id="contents" title="Contents"></textarea>
+    <div class="frow sm">
+        <input type="submit" value="发布"/>
+    </div>
+
+</form>
+
+
+{% end %}
+{% block script %}
+<script type="text/javascript" src="{{static_url("js/bootstrap.min.js")}}"/></script>
+<script type="text/javascript" src="{{static_url("js/summernote.min.js")}}"/></script>
+<script type="text/javascript" src="{{static_url("js/summernote-zh-CN.js")}}"/></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#contents").summernote({
+            lang: 'zh-CN', // default: 'en-US'
+            height: 300,
+            airMode: false
+        });
+    })
+</script>
+{% end %}

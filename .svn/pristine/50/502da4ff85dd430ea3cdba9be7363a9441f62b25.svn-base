@@ -1,0 +1,22 @@
+<!-- 加载头部模板文件-->
+<include file="tpl:head"/>
+
+<body>
+
+<!-- 加载导航模板文件-->
+<include file="tpl:nav"/>
+<img src="__IMG__/visitidc.png"/>
+<!-- 产品内容-->
+<div class="content visit-cont">
+    <div class="topleft">
+        <img style="margin-left: -8px;" src="__IMG__/visitus.png"/>
+    </div>
+    <img class="imgrv" src="__IMG__/visitus01.png"/>
+    <img class="imgrv" src="__IMG__/visitus02.png"/>
+</div>
+<!-- 加载底部模板文件-->
+<include file="tpl:footer"/>
+
+
+</body>
+</html>

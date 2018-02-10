@@ -1,0 +1,49 @@
+{% extends "admin_panel.html" %}
+{% block content %}
+    <table class="financial_tb statistic">
+        <tbody>
+        <tr class="title">
+            <td>销售排名</td>
+            <td>姓名</td>
+            <td>当月销售额</td>
+            <td>上月销售额</td>
+            <td>销售增长百分比</td>
+            <td>佣金</td>
+        </tr>
+
+        {% set k=0 %}
+        {% set s=0 %}
+        {% if ss %}
+        {% for i in ss %}
+        {% set k+= 1%}
+
+
+            <tr class="olist">
+                <td class="tid">{{k}}</td>
+                <td>{{i["name"]}}</td>
+                <td class="oid">{{i["tmsum"]}}</td>
+                <td class="oip">{{i["lmsum"]}}</td>
+                <td class="oip">{{i["percent"]}}</td>
+                <td>{{i["ecm"]}}</td>
+            </tr>
+
+        {% end %}
+        </tbody>
+    </table>
+<hr />
+
+        <p id="sp"><span class="ss">总销售额:{{s}}元</span><span class="sc">总提成:{{c}}元</span></p>{% end %}
+{% end %}
+{% block script %}
+<script type="text/javascript">
+        $.datetimepicker.setLocale('ch');
+        $("#smsf #sdt,#smsf #edt").datetimepicker({
+            lang: "ch", //语言选择中文 注：旧版本 新版方法：$.datetimepicker.setLocale('ch');
+            format: "Y/m/d",      //格式化日期
+            timepicker: false,    //关闭时间选项
+            yearStart: 2000,     //设置最小年份
+            yearEnd: 2050,        //设置最大年份
+            todayButton: false    //关闭选择今天按钮
+        });
+</script>
+{% end %}

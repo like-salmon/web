@@ -1,0 +1,67 @@
+<!-- 加载头部模板文件-->
+<include file="tpl:head"/>
+
+<body>
+<div class="nav">
+    <div class="content">
+        <div class="left">
+            <span>服务热线:</span><span class="red">400-8888-8888</span>
+        </div>
+        <div class="right">
+            <input type="button" class="btn login-btn" value="登陆"/>
+            <input type="button" class="btn reg-btn" value="注册"/>
+        </div>
+    </div>
+</div>
+<!-- 加载导航模板文件-->
+<include file="tpl:nav"/>
+<img src="__IMG__/contacttop.png"/>
+<!-- 产品内容-->
+<div class="content ct-cont">
+    <ul class="ctul">
+        <li class="conli active" data-target="tab1"><img class="img" src="__IMG__/tab1.png" alt=""></li>
+        <li class="conli" data-target="tab2"><img src="__IMG__/tab2.png" alt=""></li>
+        <li class="conli" data-target="tab3"><img src="__IMG__/tab3.png" alt=""></li>
+        <li class="conli" data-target="tab4"><img src="__IMG__/tab4.png" alt=""></li>
+        <li class="conli" data-target="tab5"><img src="__IMG__/tab5.png" alt=""></li>
+        <li class="conli" data-target="tab6"><img src="__IMG__/tab6.png" alt=""></li>
+        <li class="conli" data-target="tab7"><img src="__IMG__/tab7.png" alt=""></li>
+        <li class="conli" data-target="tab8"><img src="__IMG__/tab8.png" alt=""></li>
+    </ul>
+
+    <div class="shtabs navcontent" id="tab1">
+        <div>
+            <h3>广东立联网络有限公司</h3>
+            <p>立联网络，全称：广东立联网络有限公司，isp证号：粤ICP备11068026号-2，初创于2004年。立联从事的行业是通讯行业中的互联网接入服务，为国内各大信息服务提供商、网络文化传播、媒体、传统行业信息化等类型的企业提供服务。</p>
+            <p>立联始终致力于为客户提供优质的网络环境、接入带宽及高稳定性的网络服务，为此，我们已建立了多点7*24小时的服务机构，其中包括：7*24小时的客户服务中心，7*24小时的网管中心，7*24小时的安全中心以及大多数IDC机房的7*24小时现场驻点工程师。立联的售后服务团队占公司人数的30%，技术团队占40%其余的分别为销售团队及其它后勤服务人员，我们目前在售后服务上已经取得了一定的成绩，但我们仍然在不断的努力改进，追求极致。我们推出的每一项服务，都本着客户至上的原则，我们每一个前进的脚步，都充分体现了对客户的尊重与关怀。面对未来，我们承诺在保持现有优势的基础上，为客户提供更全面、更优质的互联网接入服务。</p>
+            <p>立联倡导“诚信”的企业经营理念，无论对客户、对员工、还是第三方合作方，我们都始终秉承诚信的合作态度。立联网络的服务目标是“诚心、诚信”的贴心优质服务。我们坚持以人为本，鼓励员工充分发挥他们的才智和潜能，并尽一切力量为员工提供施展才能的机会，使他们与立联提供的通讯服务，能够长久屹立在行业的尖端。</p>
+            <h2>相信立联,有您,有立联.</h2>
+        </div>
+        <div>
+            <h3>董事长致辞</h3>
+            <p>在日新月异的市场变化中，广东立联网络有限公司秉承着一贯踏实进取的做事风格，致力于在公司主体业务上做深、做透、做强、做大，为社会丰富多彩的网络生活，为智慧中国、数字中国、平安中国竭诚服务，逐步成为一个受人尊敬、有价值的公司。这不仅是我们的使命和未来愿望，更是我们每一立联人士为之女里的强大动源。</p>
+            <p>广东立联网络有限公司是一个崇尚科技，尊重人才的公司，公司认为我们最大的核心竞争力就是我们每一个不管创新与奋斗的立联人士，我们更愿意为这些公司为之骄傲的同事们，努力营造轻松、和谐的氛围，通过积极完善独特、合理的管理模式，创造一个可以最大限度发挥平台，让我们的同事可以“快乐工作，幸福生活”。</p>
+            <p>作为一个具有社会责任感的公司，我们深感肩上的责任重大，无论是技术的创新，新业务的拓展，还是人才培养等都时时刻刻提醒着我们。如何在残酷的市场变化中立于不败之地，是我们管理者需要持续思考的课题。但是同时，我们也对次充满了信心，只要坚持我们的理念，实施科学的战略，付出更多的努力。在新的挑战和机遇面前广东立联网络有限公司必将会创造卓越，勇往直前。</p>
+            <h2>广东立联网络有限公司董事长***</h2>
+        </div>
+    </div>
+    <div class="shtabs navcontent" id="tab2"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>第2页</h1></div>
+    <div class="shtabs navcontent" id="tab3"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>第3页</h1></div>
+    <div class="shtabs navcontent" id="tab4"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>第4页</h1></div>
+    <div class="shtabs navcontent" id="tab5"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>第5页</h1></div>
+    <div class="shtabs navcontent" id="tab6"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>第6页</h1></div>
+    <div class="shtabs navcontent" id="tab7"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>第7页</h1></div>
+    <div class="shtabs navcontent" id="tab8"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>第8页</h1></div>
+</div>
+
+<!-- 加载底部模板文件-->
+<include file="tpl:footer"/>
+<!-- body 最后 -->
+<script type="text/javascript" src="__JS__/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__JS__/custom.js"></script>
+<script type="text/javascript">
+    $.switchTabs(".visit-cont ul li.conli","click","data-target",".shtabs","active");
+
+</script>
+</body>
+</html>

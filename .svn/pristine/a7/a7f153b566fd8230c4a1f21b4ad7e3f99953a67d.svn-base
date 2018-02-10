@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+#coding:utf-8
+
+import os
+from template import wmodules
+
+#tornado setting
+websettings={
+"template_path": os.path.join(os.path.dirname(__file__), "../template"),
+"static_path": os.path.join(os.path.dirname(__file__), "../static"),
+"cookie_secret": "bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E=",
+"xsrf_cookies": True,
+"login_url": "/admin/",
+"ui_modules": wmodules,
+"debug":True,
+"op":["李富城"],
+"ndir":"D:\\web\\llidc-local\\static\\img\\news\\",#path for saving news images
+"tndir":"D:\\mywork\\llidc\\static\\img\\news\\"
+}
+
+#mysql settings
+dbsettings={
+"host":'localhost',
+'port':3306,
+'user':'root',
+'db':'llidc',
+'passwd':"zxgj0313"
+}
+
+#machines related configuration
+machine_status = {"a":"空闲","b":"租用","c":"托管","d":"试用","e":"自用","f":"回收"}
+machine_room_number = {"1":"厦门哈曼尼","2":"东莞枫华园","3":"浙江绍兴","4":"浙江杭州","5":"香港机房","6":"美国机房"}
+machine_type = {"0":"普通机器","1":"刀片机"}
+
+#order related configuration
+order_service_type = {"b":"租用","c":"托管","d":"试用","e":"失效"}
+
+#employee's configuration
+em_num = {"2":"李富城","3":"袁伟东","4":"杨丰华","18":"劳兴华","19":"陶秋梅","20":"唐晓珍","21":"黄小恩","22":"廖超","23":"闭健龙","25":"可艳","26":"朱总"}
+

@@ -1,0 +1,374 @@
+﻿<!-- 加载底部模板文件-->
+{% include "tpl/head.html" %}
+<body>
+
+<!-- 加载导航模板文件-->
+{% include "tpl/nav.html" %}
+
+<!-- 图片轮播-->
+<div class="slider">
+    <ul>
+        <li><img usemap="#nmap" src="{{ static_url("img/slide01.png")}}"/>
+            <map name="nmap">
+                <area shape="rect" coords="266,240,356,270" href="http://llidc.com:83/machine/Zcustomer.aspx">
+                <area shape="rect" coords="363,240,453,270" href="javascript:$.talktoAny();">
+            </map>
+        </li>
+        {#<li><a href="/rent/"><img src="{{ static_url("img/slide02.jpg") }}"/></a></li>#}
+
+        <li><a href="/host/"><img src="{{ static_url("img/slide03.jpg") }}"/></a></li>
+        <li><a href="http://www.ddun.com/" target="_blank"><img src="{{ static_url("img/td.jpg") }}"/></a></li>
+
+    </ul>
+</div>
+
+<!-- 利联产品介绍模块-->
+<div class="content products">
+    <div class="title">
+        <h4 style="color:#555;"><strong style="color:#67aef6;">热销主打产品</strong>总有一款满足您所需</h4>
+    </div>
+    <p class="desc">我们基于用户的需求主导产品研发，提供丰富、安全、易用、灵活的产品</p>
+    <ul class="pdesc">
+        <li class="ptli">
+            <div class="pbox">
+                <div class="top">
+                    <h4>高防BGP</h4>
+                    <p>厦门高防BGP-200G</p>
+                    <p>线路稳/防护高/单IP智能解析</p>
+                </div>
+                <div class="bottom">
+
+                    <table>
+                        <tr>
+                            <td class="title">CPU:</td>
+                            <td>8H</td>
+                        </tr>
+                        <tr>
+                            <td class="title">内存:</td>
+                            <td>16G</td>
+                        </tr>
+                            <td class="title">硬盘:</td>
+                            <td>SSD120G</td>
+                        </tr>
+                        <tr>
+                            <td class="title">宽带:</td>
+                            <td>G口100M</td>
+                        </tr>
+                        <tr>
+                            <td class="title">现价:</td>
+                            <td><strong>¥2500元</strong>/月</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <button>立即购买</button>
+
+        </div>
+
+        </li><li class="ptli">
+            <div class="pbox">
+                <div class="top">
+                    <h4>大宽带</h4>
+                    <p>网站微端神器-100G</p>
+                    <p>充足大宽带，微端加载必备</p>
+                </div>
+                <div class="bottom">
+
+                    <table>
+                        <tr>
+                            <td class="title">CPU:</td>
+                            <td>四核I5</td>
+                        </tr>
+                        <tr>
+                            <td class="title">内存:</td>
+                            <td>8G</td>
+                        </tr>
+                            <td class="title">硬盘:</td>
+                            <td>500G</td>
+                        </tr>
+                        <tr>
+                            <td class="title">宽带:</td>
+                            <td>G口100M</td>
+                        </tr>
+                        <tr>
+                            <td class="title">现价:</td>
+                            <td><strong>¥1300元</strong>/月</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <button>立即购买</button>
+            </div></li><li class="ptli">
+            <div class="pbox" >
+                <div class="top">
+                    <h4>东莞老口碑高防</h4>
+                    <h4>高防王者，荣耀回归</h4>
+                </div>
+                <div class="bottom">
+
+
+                            <p class="desc"><strong>超防300G防护=3500元</strong></p>
+
+                            <p class="desc"><strong>无敌防600G防护=5000元</strong></p>
+
+
+                            <p style="margin-top: 25px;padding: 10px 15px;">单电信真实防护，不开80封UDP禁PING，专为游戏提供顶级防护！</p>
+
+
+
+                </div>
+                <button style="    margin-top: 12px;">立即购买</button>
+        </div>
+
+        </li><li class="ptli">
+            <div class="pbox">
+                <div class="top">
+                    <h4>热卖款</h4>
+                    <p>厦门双线-100G</p>
+                    <p>公认最稳定的游戏资源开区必备</p>
+                </div>
+                <div class="bottom">
+
+                    <table>
+                        <tr>
+                            <td class="title">CPU:</td>
+                            <td>四核I5</td>
+                        </tr>
+                        <tr>
+                            <td class="title">内存:</td>
+                            <td>8G</td>
+                        </tr>
+                            <td class="title">硬盘:</td>
+                            <td>500G</td>
+                        </tr>
+                        <tr>
+                            <td class="title">宽带:</td>
+                            <td>G口50M</td>
+                        </tr>
+                        <tr>
+                            <td class="title">现价:</td>
+                            <td><strong>¥1100元</strong>/月</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <button>立即购买</button>
+        </div>
+
+    </li><li class="ptli last">
+            <div class="pbox">
+                <div class="top">
+                    <h4>高防三线</h4>
+                    <p>厦门三线-100G</p>
+                    <p>电信-联通-移动多线段路由节点</p>
+                </div>
+                <div class="bottom">
+
+                    <table>
+                        <tr>
+                            <td class="title">CPU:</td>
+                            <td>四核I5</td>
+                        </tr>
+                        <tr>
+                            <td class="title">内存:</td>
+                            <td>8G</td>
+                        </tr>
+                            <td class="title">硬盘:</td>
+                            <td>500G</td>
+                        </tr>
+                        <tr>
+                            <td class="title">宽带:</td>
+                            <td>G口50M</td>
+                        </tr>
+                        <tr>
+                            <td class="title">现价:</td>
+                            <td><strong>￥1200元</strong>/月</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <button>立即购买</button>
+
+        </div>
+        </li>
+    </ul>
+
+</div>
+
+<!-- 产品优势-->
+<div id="netshow" class="fwcont" style="position: relative;">
+    <div class="content" style="text-align: center;padding-top: 20px;">
+        <h3 style="margin:10px 15px;color:#555;"><strong style="color:#0078d8;">优质的网络资源</strong>畅享连接卓越无界</h3>
+        <p style="margin:10px 15px;font-size: 0.9em;color:#ccc;">无论在任何角落,灵活流畅的上网体验,让您的业务覆盖更多的用户</p>
+        <div class="imgcont" style="position: relative;">
+        <img style="width: 960px;" src="/static/img/index_area_bg.png"/>
+        <div class="pulse-box usa">
+        <svg class="pulse-svg" width="10px" height="10px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <circle class="circle first-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle second-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle third-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+            <span>美国</span>
+        </svg>
+        </div>
+
+        <div class="pulse-box hk">
+        <svg class="pulse-svg" width="10px" height="10px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <circle class="circle first-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle second-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle third-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+            <span>香港</span>
+        </svg>
+        </div>
+
+        <div class="pulse-box hz">
+        <svg class="pulse-svg" width="10px" height="10px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <circle class="circle first-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle second-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle third-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+            <span>杭州</span>
+        </svg>
+        </div>
+
+            <div class="pulse-box sx">
+        <svg class="pulse-svg" width="10px" height="10px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <circle class="circle first-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle second-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle third-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+            <span>绍兴</span>
+        </svg>
+        </div>
+
+         <div class="pulse-box xm">
+        <svg class="pulse-svg" width="10px" height="10px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <circle class="circle first-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle second-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle third-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+            <span>厦门</span>
+        </svg>
+        </div>
+
+            <div class="pulse-box dg">
+        <svg class="pulse-svg" width="10px" height="10px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <circle class="circle first-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle second-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle third-circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+          <circle class="circle" fill="#4587e8" cx="25" cy="25" r="25"></circle>
+            <span>东莞</span>
+        </svg>
+        </div>
+        </div>
+        <ul class="piul">
+            <li><img src="{{static_url("img/index_certificate01.png")}}"</li>
+            <li><img src="{{static_url("img/index_certificate02.png")}}"</li>
+            <li><img src="{{static_url("img/index_certificate03.png")}}"</li>
+            <li><img src="{{static_url("img/index_certificate04.png")}}"</li>
+        </ul>
+    </div>
+
+</div>
+<div id="advantage">
+    <div class="content" style="text-align: center;padding-top: 20px;">
+        <h3 style="margin:10px 15px;color:#555;"><strong style="color:#0078d8;">产品优势</strong>简单可靠</h3>
+        <p style="margin:10px 15px;font-size: 0.9em;color:#ccc;">我们的服务运维驱动,我们的产品简单可靠</p>
+        <div class="imgcont" style="position: relative;">
+            <div class="left" width="620px">
+                <img src="{{static_url("img/index_pro_left.png")}}"/>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><i></i><span>1</span><h4>灵活配置</h4><p>为用户提供“下单即上架”快速服务器交付服务</p>
+                    </li>
+                    <li><i></i><span>2</span>
+                        <h4>计费清晰</h4><p>明码标价，绝不中途乱收费</p>
+                    </li>
+                    <li><i></i><span>3</span>
+                        <h4>性能稳定可靠</h4><p>打造240G硬件防火墙，不断设备投入，领先防御优势</p>
+                    </li>
+                    <li><i></i><span>4</span>
+                        <h4>技术团队创新</h4><p>多年的数据中心服务经验，领先技术水平</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="service">
+    <div class="content" style="text-align:center;padding-top: 50px; ">
+        <h3 style="margin:10px 15px;color:#fff;">您身边的<strong style="color:#0078d8;">服务</strong>管家</h3>
+        <p style="margin:10px 15px;font-size: 0.9em;color:#fff;">我们的服务运维驱动,我们的产品简单可靠</p>
+        <ul class="sdesc">
+            <li><div class="sicon time"></div><p>7天24小时全年无休让您用着放心</p></li>
+            <li><div class="sicon response"></div><p>快速反馈信息省去等待烦恼</p></li>
+            <li><div class="sicon demand"></div><p>量身打造按需定制买的安心</p></li>
+            <li><div class="sicon network"></div><p>无缝隙全网覆盖保障网站实时性</p></li>
+        </ul>
+    </div>
+</div>
+<!-- 新闻资讯 -->
+<div class="content news">
+    <h3 style="margin:10px 15px;color:#555;"><strong style="color:#0078d8;">利联科技</strong>最新动态</h3>
+        <p style="margin:10px 15px;font-size: 0.9em;color:#ccc;">为您提供最新的行业动态，公司公告和客户服务</p>
+    <div>
+    <div class="newsct">
+        <h3>新闻资讯</h3>
+        <ul class="pul">
+        {% if news %}
+        {% for i in news %}
+        <li class="reveal">
+            <a href="/news/{{i[0]}}">
+            <p>{{i[1][:13]+"..."}}<span style="margin-right: 52px;">{{str(i[4]).split(" ")[0]}}</span></p>
+
+            </a>
+        </li>
+        {% end %}
+        {% end %}
+
+    </ul>
+    </div>
+    <div class="noticsct">
+        <h3>公司公告</h3>
+        <ul class="pul">
+        {% if notices %}
+        {% for i in notices %}
+        <li class="reveal">
+            <a href="/news/{{i[0]}}">
+            <p>{{i[1][:13]+"..."}}<span style="margin-right: 52px;">{{str(i[4]).split(" ")[0]}}</span></p>
+
+            </a>
+        </li>
+        {% end %}
+        {% end %}
+
+    </ul>
+    </div>
+    <div class="cservice" style="position: relative;">
+        <h3>客户服务</h3>
+        <ul>
+            <li>测试审请</li><li>备案服务</li>
+            <li>财务咨询</li><li>帮助中心</li>
+            <li>渠道代理</li><li>建议投诉</li>
+        </ul>
+        <img src="{{static_url("img/index_new_kefu.png")}}"/>
+
+    </div>
+        </div>
+
+</div>
+<!-- 加载底部模板文件-->
+{% include "tpl/footer.html" %}
+<script type="text/javascript" src="{{static_url("js/unslider-min.js")}}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".slider").unslider({autoplay: true, delay: 3000});
+    //首页价格标签部分
+    $.indexPriceTabs();
+});
+
+</script>
+</body>
+</html>

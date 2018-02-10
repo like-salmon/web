@@ -1,0 +1,13 @@
+{% extends "../admin/admin_panel.html" %}
+{% block css %}
+<style>
+    #nav,#top,content.panel,#footer{
+        display:none;
+    }
+</style>
+{% end %}
+{% block script %}
+<script type="text/javascript">
+        window.location.href="/client/mypanel/";
+</script>
+{% end %}

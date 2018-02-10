@@ -1,0 +1,38 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 100113
+Source Host           : localhost:3306
+Source Database       : llidc
+
+Target Server Type    : MYSQL
+Target Server Version : 100113
+File Encoding         : 65001
+
+Date: 2017-07-31 15:44:40
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for llidc_financial_log
+-- ----------------------------
+DROP TABLE IF EXISTS `llidc_financial_log`;
+CREATE TABLE `llidc_financial_log` (
+  `f_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'financial log id',
+  `f_o_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'order id',
+  `f_c_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'client''s id',
+  `f_e_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'employee''s id',
+  `f_p_dt` datetime DEFAULT NULL COMMENT 'payment datetime',
+  `f_amount` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'order amount if any',
+  `f_stype` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'service type ',
+  `f_log_dt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'log datetime',
+  `f_memo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'financial log memo',
+  PRIMARY KEY (`f_id`),
+  KEY `flog` (`f_o_id`,`f_c_id`,`f_e_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of llidc_financial_log
+-- ----------------------------

@@ -1,0 +1,1401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/static/js/admin.js" line="471" mnemonic="9" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="dd173fb5-00e2-4695-b08a-5d83352434f6" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/llidc$updatedb.coverage" NAME="updatedb Coverage Results" MODIFIED="1502470808953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script" />
+    <SUITE FILE_PATH="coverage/llidc$Handlers.coverage" NAME="Handlers Coverage Results" MODIFIED="1503035548574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/handlers" />
+    <SUITE FILE_PATH="coverage/llidc$updatepwd.coverage" NAME="updatepwd Coverage Results" MODIFIED="1503370417876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script" />
+    <SUITE FILE_PATH="coverage/llidc$updatedb_addclient.coverage" NAME="updatedb_addclient Coverage Results" MODIFIED="1503849936018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script" />
+    <SUITE FILE_PATH="coverage/llidc$data_processer.coverage" NAME="data_processer Coverage Results" MODIFIED="1503035730974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/script" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Handlers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/handlers/Handlers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="1201" column="0" lean-forward="true" selection-start-line="1201" selection-start-column="0" selection-end-line="1201" selection-end-column="0" />
+              <folding>
+                <element signature="e#37#68#0" expanded="true" />
+                <marker date="1511326581591" expanded="true" signature="1532:1561" ph="SELECT * FRO... llidc_employees" />
+                <marker date="1511326581591" expanded="true" signature="2854:2878" ph="select * fro... llidc_news" />
+                <marker date="1511326581591" expanded="true" signature="4288:4312" ph="select * fro... llidc_news" />
+                <marker date="1511326581591" expanded="true" signature="5650:5679" ph="SELECT * FRO... llidc_employees" />
+                <marker date="1511326581591" expanded="true" signature="9431:9459" ph="select * fro... llidc_machines" />
+                <marker date="1511326581591" expanded="true" signature="9477:9512" ph="select count... llidc_machines" />
+                <marker date="1511326581591" expanded="true" signature="12520:12670" ph="insert into llidc_machines... " />
+                <marker date="1511326581591" expanded="true" signature="13018:13214" ph="insert into llidc_machines... " />
+                <marker date="1511326581591" expanded="true" signature="13776:13813" ph="select m_ip,... llidc_machines" />
+                <marker date="1511326581591" expanded="true" signature="17434:17547" ph="select * fro... llidc_orders" />
+                <marker date="1511326581591" expanded="true" signature="17565:17685" ph="select count... llidc_orders" />
+                <marker date="1511326581591" expanded="true" signature="19007:19052" ph="select sum(f... llidc_financial_log" />
+                <marker date="1511326581591" expanded="true" signature="22980:23147" ph="insert into llidc_orders... " />
+                <marker date="1511326581591" expanded="true" signature="23369:23410" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="23369:23411" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="23369:23425" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="23760:23914" ph="insert into llidc_financial_log... " />
+                <marker date="1511326581591" expanded="true" signature="24095:24224" ph="insert into llidc_commission... " />
+                <marker date="1511326581591" expanded="true" signature="25859:25972" ph="select * fro... llidc_orders" />
+                <marker date="1511326581591" expanded="true" signature="28579:28692" ph="select * fro... llidc_orders" />
+                <marker date="1511326581591" expanded="true" signature="29052:29081" ph="select * fro... llidc_suborders" />
+                <marker date="1511326581591" expanded="true" signature="29688:29750" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="30238:30264" ph="delete from " />
+                <marker date="1511326581591" expanded="true" signature="32110:32172" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="32364:32499" ph="insert into llidc_suborders... " />
+                <marker date="1511326581591" expanded="true" signature="32865:33019" ph="insert into llidc_financial_log... " />
+                <marker date="1511326581591" expanded="true" signature="33757:33886" ph="insert into llidc_commission... " />
+                <marker date="1511326581591" expanded="true" signature="34559:34620" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="36358:36432" ph="insert into llidc_news... " />
+                <marker date="1511326581591" expanded="true" signature="37672:37838" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="38341:38369" ph="select * fro... llidc_machines" />
+                <marker date="1511326581591" expanded="true" signature="39642:39682" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="39796:39837" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="40260:40302" ph="select o_exp... llidc_orders" />
+                <marker date="1511326581591" expanded="true" signature="40487:40511" ph="delete from " />
+                <marker date="1511326581591" expanded="true" signature="41229:41270" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="42270:42405" ph="insert into llidc_suborders... " />
+                <marker date="1511326581591" expanded="true" signature="42582:42735" ph="insert into llidc_financial_log... " />
+                <marker date="1511326581591" expanded="true" signature="43121:43250" ph="insert into llidc_commission... " />
+                <marker date="1511326581591" expanded="true" signature="43471:43600" ph="insert into llidc_commission... " />
+                <marker date="1511326581591" expanded="true" signature="44550:44633" ph="select * fro... llidc_financial_log" />
+                <marker date="1511326581591" expanded="true" signature="44651:44741" ph="select count... llidc_financial_log" />
+                <marker date="1511326581591" expanded="true" signature="46997:47042" ph="select sum(f... llidc_financial_log" />
+                <marker date="1511326581591" expanded="true" signature="47195:47235" ph="select sum(c... llidc_llidc_commission" />
+                <marker date="1511326581591" expanded="true" signature="48305:48346" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="49254:49281" ph="select * fro... llidc_clients" />
+                <marker date="1511326581591" expanded="true" signature="49299:49333" ph="select count... llidc_clients" />
+                <marker date="1511326581591" expanded="true" signature="49444:49523" ph="select * fro... llidc_clients" />
+                <marker date="1511326581591" expanded="true" signature="49545:49631" ph="select count... llidc_clients" />
+                <marker date="1511326581591" expanded="true" signature="51414:51439" ph="delete from " />
+                <marker date="1511326581591" expanded="true" signature="51489:51568" ph="select * fro... llidc_clients" />
+                <marker date="1511326581591" expanded="true" signature="52550:52652" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="52550:52653" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="52550:52669" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="53603:53621" ph="select u_pwd... llidc" />
+                <marker date="1511326581591" expanded="true" signature="53603:53636" ph="select u_pwd... llidc_employees" />
+                <marker date="1511326581591" expanded="true" signature="54019:54058" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="54976:55019" ph="update llidc... " />
+                <marker date="1511326581591" expanded="true" signature="55966:56041" ph="insert into llidc_employees... " />
+                <marker date="1511326581591" expanded="true" signature="57996:58023" ph="select * fro... llidc_clients" />
+                <marker date="1511326581591" expanded="true" signature="59865:59948" ph="insert into llidc_message... " />
+                <marker date="1511326581591" expanded="true" signature="61094:61159" ph="insert into llidc_clients... " />
+                <marker date="1511326581591" expanded="true" signature="61711:61742" ph="select m_msg... llidc_message" />
+                <marker date="1511326581591" expanded="true" signature="62099:62126" ph="select m_msg... llidc_message" />
+                <marker date="1511326581591" expanded="true" signature="63049:63162" ph="select * fro... llidc_orders" />
+                <marker date="1511326581591" expanded="true" signature="63180:63298" ph="select sum(*... llidc_orders" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webCaptcha.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/webCaptcha.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webMail.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/webMail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="e#32#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="950">
+              <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/error.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/admin/admin.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4350">
+              <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_overview.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/admin/admin_overview.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_nav.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/admin/admin_nav.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_nav.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/admin/admin_nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_head.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/admin/admin_head.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>am</find>
+      <find>mpwdform</find>
+      <find>劳</find>
+      <find>adminLogin</find>
+      <find>/admin/addsuccess/</find>
+      <find>adminlogin</find>
+      <find>u_acc</find>
+      <find>print</find>
+      <find>client</find>
+      <find>%H:%M:%S</find>
+      <find>export</find>
+      <find>map</find>
+      <find>orders</find>
+      <find>clients</find>
+      <find>wsales</find>
+      <find>clients/</find>
+      <find>clientModifyHandler</find>
+      <find>modify</find>
+      <find>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;expire={{expire}}&amp;obexpire={{obexpire}}&amp;obamount={{obamount}}&amp;obstart={{obstart}}&amp;wsales={{wsales}}</find>
+      <find>格式不对</find>
+      <find>**</find>
+      <find>search</find>
+      <find>$.post</find>
+      <find>update</find>
+      <find>$.getCookie</find>
+      <find>datetime</find>
+      <find>login</find>
+      <find>captcha</find>
+      <find>adminHandler</find>
+      <find>adminOverviewHandler</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>encountered error</replace>
+      <replace>&amp;</replace>
+      <replace>&amp;mtype={{mtype}}&amp;</replace>
+      <replace>&amp;mtype={{mtype}}&amp;mroom={{mroom}}&amp;</replace>
+      <replace>&amp;mtype={{mtype}}&amp;mroom={{mroom}}&amp;cnum={{cnum}}&amp;</replace>
+      <replace>&amp;mtype={{mtype}}&amp;mroom={{mroom}}&amp;cnum={{cnum}}&amp;anum={{anum}}&amp;</replace>
+      <replace>&amp;mtype={{mtype}}&amp;mroom={{mroom}}&amp;cnum={{cnum}}&amp;anum={{anum}}&amp;onum={{onum}}</replace>
+      <replace>&amp;mtype={{mtype}}&amp;mroom={{mroom}}&amp;cnum={{cnum}}&amp;anum={{anum}}&amp;onum={{onum}}&amp;mstatus={{}}</replace>
+      <replace>&amp;mtype={{mtype}}</replace>
+      <replace>&amp;mtype={{mtype}}&amp;bm_mnum={{bm_mnum}}&amp;lip={{lip}}</replace>
+      <replace>&amp;mtype={{mtype}}&amp;bm_mnum={{bm_mnum}}&amp;lip={{lip}}&amp;mstatus={{mstatus}}</replace>
+      <replace>&amp;mtype={{mtype}}&amp;mroom={{mroom}}&amp;cnum={{cnum}}&amp;anum={{anum}}&amp;onum={{onum}}&amp;mstatus={{mstatus}}</replace>
+      <replace>&amp;mtype={{mtype}}&amp;mroom={{mroom}}&amp;cnum={{cnum}}&amp;anum={{anum}}&amp;onum={{onum}}&amp;mstatus={{mstatus}}&amp;ips={{ips}}</replace>
+      <replace>&amp;mtype={{mtype}}&amp;bm_mnum={{bm_mnum}}&amp;lip={{lip}}&amp;mstatus={{mstatus}}&amp;ips={{ips}}</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;expire={{expire}}</replace>
+      <replace>financial</replace>
+      <replace>sdt</replace>
+      <replace>?offset={{i}}&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;sdt={{sdt}}&amp;edt={{edt}}&amp;sid={{sid}}&amp;</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;sdt={{sdt}}&amp;edt={{edt}}&amp;sid={{sid}}</replace>
+      <replace>offset={{i}}&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;expire={{expire}}&amp;orderby={{orderby}}</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;expire={{expire}&amp;obexpire={{obexpire}}&amp;obamount={{obamount}}</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;sdt={{sdt}}&amp;edt={{edt}}&amp;sid={{sid}}&amp;oid={{oid}}</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;expire={{expire}}&amp;obexpire={{obexpire}}&amp;obamount={{obamount}}</replace>
+      <replace>/admin/clients</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;expire={{expire}}&amp;obexpire={{obexpire}}&amp;obamount={{obamount}}&amp;obstart={{obstart}}</replace>
+      <replace>self.database</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;expire={{expire}}&amp;obexpire={{obexpire}}&amp;obamount={{obamount}}&amp;obstart={{obstart}}&amp;wsales={{wsales}}</replace>
+      <replace>&amp;u_acc={{u_acc}}&amp;ips={{ips}}&amp;stype={{stype}}&amp;expire={{expire}}&amp;obexpire={{obexpire}}&amp;obamount={{obamount}}&amp;obstart={{obstart}}&amp;wsales={{wsales}}&amp;ifad={{ifad}}</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/static/js/summernote-zh-CN.js" />
+        <option value="$PROJECT_DIR$/template/news.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_finish_publish.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_publish.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_footer.html" />
+        <option value="$PROJECT_DIR$/template/index.html" />
+        <option value="$PROJECT_DIR$/static/js/custom.js" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/template/error.html" />
+        <option value="$PROJECT_DIR$/script/updatedb.py" />
+        <option value="$PROJECT_DIR$/template/admin/admin_nav.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_panel.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_statistics.html" />
+        <option value="$PROJECT_DIR$/script/data_processer.py" />
+        <option value="$PROJECT_DIR$/template/admin/admin_modify_pwd.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_machines.html" />
+        <option value="$PROJECT_DIR$/config/settings.py" />
+        <option value="$PROJECT_DIR$/static/css/public.css" />
+        <option value="$PROJECT_DIR$/template/admin/client_auth.html" />
+        <option value="$PROJECT_DIR$/template/admin/client_reg.html" />
+        <option value="$PROJECT_DIR$/template/admin/client_redirect.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_redirect.html" />
+        <option value="$PROJECT_DIR$/template/client/client_footer.html" />
+        <option value="$PROJECT_DIR$/template/client/client_mypanel.html" />
+        <option value="$PROJECT_DIR$/template/client/client_orders.html" />
+        <option value="$PROJECT_DIR$/template/client/client_nav.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_pwd_redirect.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_mpresult.html" />
+        <option value="$PROJECT_DIR$/template/client/client_head.html" />
+        <option value="$PROJECT_DIR$/script/updatepwd.py" />
+        <option value="$PROJECT_DIR$/static/js/client.js" />
+        <option value="$PROJECT_DIR$/template/client/client_redirect.html" />
+        <option value="$PROJECT_DIR$/template/client/client_lgredirect.html" />
+        <option value="$PROJECT_DIR$/template/client/client_auth.html" />
+        <option value="$PROJECT_DIR$/template/client/client_reg.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_financial.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_head.html" />
+        <option value="$PROJECT_DIR$/static/css/client/client.css" />
+        <option value="$PROJECT_DIR$/template/admin/addredirect.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_addsuccess.html" />
+        <option value="$PROJECT_DIR$/app/dbWrapper.py" />
+        <option value="$PROJECT_DIR$/template/admin/admin_add.html" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/template/admin/admin_clients.html" />
+        <option value="$PROJECT_DIR$/template/admin/admin_machines_bm.html" />
+        <option value="$PROJECT_DIR$/static/css/admin/admin.css" />
+        <option value="$PROJECT_DIR$/template/admin/admin_orders.html" />
+        <option value="$PROJECT_DIR$/static/js/admin.js" />
+        <option value="$PROJECT_DIR$/script/updatedb_addclient.py" />
+        <option value="$PROJECT_DIR$/template/tpl/nav.html" />
+        <option value="$PROJECT_DIR$/handlers/Handlers.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1932" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llidc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js.eslint.eslintPackage" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\mywork\llidc\template\client" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.updatedb_addclient">
+    <configuration default="false" name="updatedb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/script" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/script/updatedb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="data_processer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/script" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/script/data_processer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Handlers" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/handlers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/handlers/Handlers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="updatepwd" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/script" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/script/updatepwd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="updatedb_addclient" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/script" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/script/updatedb_addclient.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="lilian" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="lilian" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.updatedb" />
+      <item index="1" class="java.lang.String" itemvalue="Python.data_processer" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Handlers" />
+      <item index="3" class="java.lang.String" itemvalue="Python.updatepwd" />
+      <item index="4" class="java.lang.String" itemvalue="Python.updatedb_addclient" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.updatedb_addclient" />
+        <item index="1" class="java.lang.String" itemvalue="Python.updatepwd" />
+        <item index="2" class="java.lang.String" itemvalue="Python.data_processer" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Handlers" />
+        <item index="4" class="java.lang.String" itemvalue="Python.updatedb" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\asus\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd173fb5-00e2-4695-b08a-5d83352434f6" name="Default" comment="" />
+      <created>1494206364077</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1494206364077</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11356297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10105758" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_machines.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="86" column="65" lean-forward="false" selection-start-line="86" selection-start-column="65" selection-end-line="86" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="366" column="19" lean-forward="false" selection-start-line="366" selection-start-column="19" selection-end-line="366" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="87" lean-forward="false" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_redirect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_redirect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_mypanel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_lgredirect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="65" column="18" lean-forward="true" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/client/client.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_financial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="86" column="43" lean-forward="true" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_modify_pwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_finish_publish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_mpresult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_addsuccess.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_addredirect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-503">
+          <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_pwd_redirect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dbWrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4100">
+          <caret line="165" column="33" lean-forward="true" selection-start-line="165" selection-start-column="33" selection-end-line="165" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/updatepwd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_clients.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="83" lean-forward="false" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_machines_bm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="72" column="23" lean-forward="false" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/updatedb_addclient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10575">
+          <caret line="423" column="30" lean-forward="false" selection-start-line="423" selection-start-column="30" selection-end-line="423" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/llidcspider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="89" column="29" lean-forward="false" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/data_processer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3250">
+          <caret line="135" column="4" lean-forward="false" selection-start-line="135" selection-start-column="4" selection-end-line="135" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/updatedb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_orders.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5125">
+          <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4375">
+          <caret line="175" column="7" lean-forward="false" selection-start-line="175" selection-start-column="7" selection-end-line="175" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding>
+            <marker date="1503847797725" expanded="true" signature="31579:31598" ph="..." />
+            <marker date="1503847797725" expanded="true" signature="31579:31615" ph="..." />
+            <marker date="1503847797725" expanded="true" signature="50846:50883" ph="..." />
+            <marker date="1503847797725" expanded="true" signature="50979:51009" ph="..." />
+            <marker date="1503847797725" expanded="true" signature="50979:51016" ph="..." />
+            <marker date="1503847797725" expanded="true" signature="51303:51340" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/tpl/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/client/client_orders.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_publish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_panel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_nav.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/admin/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4350">
+          <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/admin_head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webCaptcha.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/Handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="1201" column="0" lean-forward="true" selection-start-line="1201" selection-start-column="0" selection-end-line="1201" selection-end-column="0" />
+          <folding>
+            <element signature="e#37#68#0" expanded="true" />
+            <marker date="1511326581591" expanded="true" signature="1532:1561" ph="SELECT * FRO... llidc_employees" />
+            <marker date="1511326581591" expanded="true" signature="2854:2878" ph="select * fro... llidc_news" />
+            <marker date="1511326581591" expanded="true" signature="4288:4312" ph="select * fro... llidc_news" />
+            <marker date="1511326581591" expanded="true" signature="5650:5679" ph="SELECT * FRO... llidc_employees" />
+            <marker date="1511326581591" expanded="true" signature="9431:9459" ph="select * fro... llidc_machines" />
+            <marker date="1511326581591" expanded="true" signature="9477:9512" ph="select count... llidc_machines" />
+            <marker date="1511326581591" expanded="true" signature="12520:12670" ph="insert into llidc_machines... " />
+            <marker date="1511326581591" expanded="true" signature="13018:13214" ph="insert into llidc_machines... " />
+            <marker date="1511326581591" expanded="true" signature="13776:13813" ph="select m_ip,... llidc_machines" />
+            <marker date="1511326581591" expanded="true" signature="17434:17547" ph="select * fro... llidc_orders" />
+            <marker date="1511326581591" expanded="true" signature="17565:17685" ph="select count... llidc_orders" />
+            <marker date="1511326581591" expanded="true" signature="19007:19052" ph="select sum(f... llidc_financial_log" />
+            <marker date="1511326581591" expanded="true" signature="22980:23147" ph="insert into llidc_orders... " />
+            <marker date="1511326581591" expanded="true" signature="23369:23410" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="23369:23411" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="23369:23425" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="23760:23914" ph="insert into llidc_financial_log... " />
+            <marker date="1511326581591" expanded="true" signature="24095:24224" ph="insert into llidc_commission... " />
+            <marker date="1511326581591" expanded="true" signature="25859:25972" ph="select * fro... llidc_orders" />
+            <marker date="1511326581591" expanded="true" signature="28579:28692" ph="select * fro... llidc_orders" />
+            <marker date="1511326581591" expanded="true" signature="29052:29081" ph="select * fro... llidc_suborders" />
+            <marker date="1511326581591" expanded="true" signature="29688:29750" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="30238:30264" ph="delete from " />
+            <marker date="1511326581591" expanded="true" signature="32110:32172" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="32364:32499" ph="insert into llidc_suborders... " />
+            <marker date="1511326581591" expanded="true" signature="32865:33019" ph="insert into llidc_financial_log... " />
+            <marker date="1511326581591" expanded="true" signature="33757:33886" ph="insert into llidc_commission... " />
+            <marker date="1511326581591" expanded="true" signature="34559:34620" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="36358:36432" ph="insert into llidc_news... " />
+            <marker date="1511326581591" expanded="true" signature="37672:37838" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="38341:38369" ph="select * fro... llidc_machines" />
+            <marker date="1511326581591" expanded="true" signature="39642:39682" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="39796:39837" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="40260:40302" ph="select o_exp... llidc_orders" />
+            <marker date="1511326581591" expanded="true" signature="40487:40511" ph="delete from " />
+            <marker date="1511326581591" expanded="true" signature="41229:41270" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="42270:42405" ph="insert into llidc_suborders... " />
+            <marker date="1511326581591" expanded="true" signature="42582:42735" ph="insert into llidc_financial_log... " />
+            <marker date="1511326581591" expanded="true" signature="43121:43250" ph="insert into llidc_commission... " />
+            <marker date="1511326581591" expanded="true" signature="43471:43600" ph="insert into llidc_commission... " />
+            <marker date="1511326581591" expanded="true" signature="44550:44633" ph="select * fro... llidc_financial_log" />
+            <marker date="1511326581591" expanded="true" signature="44651:44741" ph="select count... llidc_financial_log" />
+            <marker date="1511326581591" expanded="true" signature="46997:47042" ph="select sum(f... llidc_financial_log" />
+            <marker date="1511326581591" expanded="true" signature="47195:47235" ph="select sum(c... llidc_llidc_commission" />
+            <marker date="1511326581591" expanded="true" signature="48305:48346" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="49254:49281" ph="select * fro... llidc_clients" />
+            <marker date="1511326581591" expanded="true" signature="49299:49333" ph="select count... llidc_clients" />
+            <marker date="1511326581591" expanded="true" signature="49444:49523" ph="select * fro... llidc_clients" />
+            <marker date="1511326581591" expanded="true" signature="49545:49631" ph="select count... llidc_clients" />
+            <marker date="1511326581591" expanded="true" signature="51414:51439" ph="delete from " />
+            <marker date="1511326581591" expanded="true" signature="51489:51568" ph="select * fro... llidc_clients" />
+            <marker date="1511326581591" expanded="true" signature="52550:52652" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="52550:52653" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="52550:52669" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="53603:53621" ph="select u_pwd... llidc" />
+            <marker date="1511326581591" expanded="true" signature="53603:53636" ph="select u_pwd... llidc_employees" />
+            <marker date="1511326581591" expanded="true" signature="54019:54058" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="54976:55019" ph="update llidc... " />
+            <marker date="1511326581591" expanded="true" signature="55966:56041" ph="insert into llidc_employees... " />
+            <marker date="1511326581591" expanded="true" signature="57996:58023" ph="select * fro... llidc_clients" />
+            <marker date="1511326581591" expanded="true" signature="59865:59948" ph="insert into llidc_message... " />
+            <marker date="1511326581591" expanded="true" signature="61094:61159" ph="insert into llidc_clients... " />
+            <marker date="1511326581591" expanded="true" signature="61711:61742" ph="select m_msg... llidc_message" />
+            <marker date="1511326581591" expanded="true" signature="62099:62126" ph="select m_msg... llidc_message" />
+            <marker date="1511326581591" expanded="true" signature="63049:63162" ph="select * fro... llidc_orders" />
+            <marker date="1511326581591" expanded="true" signature="63180:63298" ph="select sum(*... llidc_orders" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webMail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#32#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

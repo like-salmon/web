@@ -1,0 +1,68 @@
+{% include 'admin_head.html'%}
+
+{% include 'admin_nav.html'%}
+<div class="wrapper">
+
+<div class="content panel">
+    {% block content %}
+    {% end %}
+</div>
+
+<div class="modal-bg">
+</div>
+    <div class="modal-ct modal-ct-s-1">
+        <img class="mclose 1" src="{{static_url("img/close.png")}}"/>
+        <h2>添加机房机器</h2>
+        <div class="modal-dt">
+            <form id="add_machines" class="mform" action="/admin/machines/">
+                {% raw xsrf_form_html() %}
+                <div class="data">
+                </div>
+                <div class="frow" style="text-align: center;">
+                    <input type="submit" class="m_addbtn sbtn" value="添加" hold = 'init' disabled='disabled'style="background-color: #ccc;color:#fff;"/>
+                    <div class="tips"><span></span></div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+<div class="modal-ct modal-ct-s-2">
+        <img class="mclose 2" src="{{static_url("img/close.png")}}"/>
+        <h2>新增订单</h2>
+        <div class="modal-dt">
+            <form id="add_orders" class="mform" action="/admin/orders/">
+                {% raw xsrf_form_html() %}
+                <div class="data">
+                </div>
+                <div class="frow" style="text-align: center;">
+                    <input type="submit" class="o_addbtn sbtn" value="新增" disabled='disabled' style="background-color: #ccc;color:#fff;"/>
+                    <div class="tips"><span></span></div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+<div class="modal-ct modal-ct-s-3">
+        <img class="mclose 3" src="{{static_url("img/close.png")}}"/>
+        <h2>发布新闻/公告</h2>
+        <div class="modal-dt">
+            <form id="publish" class="mform" action="/admin/publish/">
+                {% raw xsrf_form_html() %}
+                <div class="data">
+                </div>
+                <div class="frow" style="text-align: center;">
+                    <input type="submit" class="n_addbtn sbtn" value="发布" disabled="disabled" style="background-color: #17578d;color:#fff;"/>
+                    <div class="tips"><span></span></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div class="loading">
+    <img src="{{static_url("img/loading.gif")}}"/>
+</div>
+
+
+</div>{# wrapper #}
+{% include 'admin_footer.html' %}

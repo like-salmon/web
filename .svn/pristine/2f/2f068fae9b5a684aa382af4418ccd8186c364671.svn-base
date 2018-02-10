@@ -1,0 +1,293 @@
+{% extends "admin_panel.html" %}
+{% block content %}
+
+    <form method="get" id="smsf">
+        <h3><i class="fa fa-search fa-lg"></i>搜索订单</h3>
+        <div class="frow">
+                    <label>服务类型:</label>
+        <select name="stype" id="stype">
+            <option></option>
+            <option value="b" {% if stype == 'b'%} selected {% end %}>租用</option>
+            <option value="c" {% if stype == 'c'%} selected {% end %}>托管</option>
+            <option value="d" {% if stype == 'd'%} selected {% end %}>试用</option>
+        </select>
+        </div>
+        {% if ctype in [4,5]%}<div class="frow">
+                    <label>所属业务员:</label>
+        <select name="wsales">
+            <option></option>
+            <option value="18,劳兴华" {% if '18' in wsales %} selected {% end %}>劳兴华</option>
+            <option value="19,陶秋梅" {% if '19' in wsales %} selected {% end %}>陶秋梅</option>
+            <option value="20,唐晓珍" {% if '20' in wsales %} selected {% end %}>唐晓珍</option>
+            <option value="21,黄小恩" {% if '21' in wsales %} selected {% end %}>黄小恩</option>
+            <option value="22,廖超" {% if '22' in wsales %} selected {% end %}>廖超</option>
+        </select>
+        </div>{% end %}
+        <div class="frow ccb">
+            <label>是否过期:</label><input type="radio" value="1" name="expire" id="expire" {% if expire == '1'%}checked="checked"{% end %}/><label class="checkbox" for="expire"></label>
+        </div>
+        <div class="frow ccb">
+            <label>近三天到期:</label><input type="radio" value="2" name="expire" id="tdays" {% if expire == '2' %}checked="checked"{% end %}/><label class="checkbox" for="tdays"></label>
+
+        </div>
+        <div class="frow ccb">
+            <label>近七天到期:</label><input type="radio" value="3" name="expire" id="sdays" {% if expire == '3' %}checked="checked"{% end %}/><label class="checkbox" for="sdays"></label>
+        </div>
+        <div class="area frow">
+            <div class="nums">
+                <label>客户账号:</label><input type="text" name="u_acc" class="u_acc" value="{{u_acc}}"/>
+            </div>
+            <div class="nums ip">
+                <label>机器IP:</label><input type="text" name="ips" class="ips" value="{{ips}}"/>
+            </div>
+            <div class="nums">
+                <label>资产编号:</label><input type="text" name="asnum" class="asnum" value="{{asnum}}"/>
+            </div>
+            <div class="nums">
+                <input type="submit" value="搜索"/>
+            </div>
+        </div>
+
+    </form>
+    <h3>订单列表</h3>
+    <table class="orders_tb">
+        <tbody>
+        <tr class="title">
+            <td>编号</td>
+            <td>客户账号</td>
+            <td>机器IP</td>
+            <td id="dp">出机时间<a class="top" href="/admin/orders?&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire=&obamount=&obstart=asc&wsales={{wsales}}"><i class="fa fa-chevron-circle-up fa-lg" aria-hidden="true"></i></a><a class='bottom' href="/admin/orders?&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire=&obamount=&obstart=desc&wsales={{wsales}}"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a></td>
+            <td id="eptitle">到期时间<a class="top" href="/admin/orders?&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire=asc&obamount=&obstart=&wsales={{wsales}}"><i class="fa fa-chevron-circle-up fa-lg" aria-hidden="true"></i></a><a class='bottom' href="/admin/orders?&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire=desc&obamount=&obstart=&wsales={{wsales}}"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a></td>
+            {% if ctype in [1,3,4,5]%}<td id="pmtitle">订单金额<a class="top" href="/admin/orders?&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire=&obamount=asc&obstart=&wsales={{wsales}}"><i class="fa fa-chevron-circle-up fa-lg" aria-hidden="true"></i></a><a class='bottom'href="/admin/orders?&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire=&obamount=desc&obstart=&wsales={{wsales}}"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a></td>{% end %}
+            {% if ctype in [4,5]%}<td class="wsales">所属业务员</td>{% end %}
+            <td class="cf">产品配置</td>
+            <td>业务类型</td>
+            <td>所属机房</td>
+            <td>操作</td>
+        </tr>
+        {% set pm = 0 %}
+        {% set k =1 %}
+        {% if orders %}
+        {% from datetime import datetime %}
+        {% from datetime import timedelta as td %}
+
+        {% for i in orders %}
+        {% set k += 1 %}
+            <tr class="olist">
+                <td class="tid">{{i[0]}}</td>
+                <td><input type="text" disabled="disabled" name="uacc" class="uacc" value="{{i[2]}}"/></td>
+                <td class="ips"><input type="text" disabled="disabled" name="ip" class="ip" value="{{i[1]}}"/></td>
+                <td><input type="text" disabled="disabled" name='ost' class='ost'value="{{ datetime.strftime(i[4],'%Y/%m/%d')}}"/></td>
+                <input type="hidden" name='smonth'class="smonth" value="{{'-'.join([str(i[4].year)+'年'+str(i[4].month)+'月',str(i[5].year)+'年'+str(i[5].month)])+'月' if (i[5].month-i[4].month)>1 else '截止到:'+datetime.strftime(i[5],'%Y/%m/%d')}}"/>
+                <td><input type="text" disabled="disabled" name='oet' {% if datetime.strftime((i[5] - td(3)), '%Y/%m/%d') <= datetime.strftime(datetime.now(),'%Y/%m/%d') and datetime.strftime(i[5],'%Y/%m/%d') >= datetime.strftime(datetime.now(),'%Y/%m/%d') %} style = 'color:red;'{% end %}class='oet' value="{{ datetime.strftime(i[5],'%Y/%m/%d') }}"/></td>
+                {% if ctype in [1,3,4,5]%}<td><input type="text" name='opm' class='opm' disabled="disabled" value="{{i[3] if i[3] else 0}}"/></td>{% end %}{% set pm += i[3]%}
+                {% if ctype in [4,5]%}<td class="wsales">{{i[7].split(',')[1]}}</td>{% end %}
+                <input type="hidden" name="wsales" id="wsales" value="{{i[7]}}"/>
+                <input type="hidden" name="ptype" id="ptype" value="{{i[10] if i[10] else ''}}"/>
+                <input type="hidden" name="idcloca" class="idcloca" value="{{i[28] if i[28] else ''}}"/>
+                {#<td><input type="text" disabled="disabled" value="{{i[3]}}"/></td>#}
+                <td><input type="text" disabled="disabled" value="{{i[35]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[33].split(',')[1]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[28].split(',')[1] if i[27] else ''}}"/></td>
+                <td><span class="modify">详情</span>|{% if ctype in [5] %}<span class="renew">续期</span>|{% end %}{% if datetime.strftime(datetime.now(),'%Y/%m/%d') > datetime.strftime(i[5],'%Y/%m/%d') %}{% if ctype in [5] %}<span class="release" style="color:red;">回收</span>|{% end %}{% end %}<span class="sorder">子订单</span>|<span class="remove">删除</span></td>
+            </tr>
+        {% end %}
+
+        {% end %}
+        </tbody>
+
+    </table>
+<hr/>
+        {% if k-1>0 %}
+        <div id="summary"><span>每页共{{k-1}}条</span><span>当前页面订单金额为:<em>{{pm}}</em>元</span>{% if not ctype in [5] %}<span>订单总额为:<em>{{sum if sum else 0}}</em>元</span>{% end %}</div>
+        {% end %}
+    <ul class="pagination">
+
+        {% if pages and 1< pages <= 24 %}
+        {% for i in range(1,pages+1) %}
+            {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a></li>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a></li>
+                    {% end %}
+            {% end %}
+        {% end %}
+
+        {% if pages and pages > 24 %}
+        {# ------ #}
+        <li><a href="/admin/orders?offset={{1}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class=""><<</a></li>
+
+        {% if offset > 1%}
+            <li><a href="/admin/orders?offset={{offset-1}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class=""><</a></li>
+        {% end %}
+        {% if offset < pages/3 %}
+            {% if (pages/3 - offset) >6 and offset >9  %}
+               {% for i in range(1,5) %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a>
+                    {% end %}
+                    <li><a href="javascript:;" class="empty">...</a>
+                    {% for i in range(offset-2,offset+3) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a>
+                    {% end %}
+                    {% end %}
+            {% elif (pages/3 - offset) > 6 and offset <=9  %}
+                {% for i in range(1,offset+4) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a>
+                    {% end %}
+                {% end %}
+        {% elif (pages/3 - offset) <= 6 and offset>9  %}
+            {% for i in range(1,5) %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a>
+                    {% end %}
+                    <li><a href="javascript:;" class="empty">...</a>
+                    {% for i in range(offset-3,offset+3) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a>
+                    {% end %}
+                    {% end %}
+        {% elif (pages/3 - offset) <= 6 and offset <= 9  %}
+            {% for i in range(1,offset+4) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a>
+                    {% end %}
+                {% end %}
+    {% end %}
+
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages/2-3,pages/2+3) %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}">{{i}}</a></li>
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages-3,pages+1) %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}">{{i}}</a></li>
+        {% end %}
+        {% end %} {# end if offset 1/3 #}
+
+        {# ------ #}
+
+        {# 1/3 ~ 2/3 part #}
+        {% if pages/3 <= offset <= pages/3*2 %}
+        {% for i in range(1,5) %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}">{{i}}</a></li>
+        {% end %}{# end for #}
+
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(offset-3,offset+4) %}
+        {% if i == offset %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a></li>
+            {% else %}
+        <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}">{{i}}</a></li>
+        {% end %} {# end if #}
+
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages-3,pages+1) %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}">{{i}}</a></li>
+        {% end %} {# end for #}
+        {% end %} {# end if offset 2/3 #}
+
+        {# ------ #}
+
+        {# pages-3 part #}
+        {% if pages/3*2 < offset <= pages %}
+        {% for i in range(1,6) %}
+            {% if i == offset %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a></li>
+            {% else %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a></li>
+            {% end %}
+        {% end %}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages/2-3,pages/2+3) %}
+            {% if i == offset %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a></li>
+            {% else %}
+            <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a></li>
+            {% end %}
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% if pages - offset < 6 %}
+            {% for i in range(offset-2,pages+1) %}
+            {% if i == offset %}
+                <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a></li>
+            {% else %}
+                <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a></li>
+            {% end %}
+            {% end %}
+        {% else %}
+            {% for i in range(offset-2,offset+2) %}
+                {% if i == offset %}
+                <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a></li>
+                {% else %}
+                <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a></li>
+                {% end %}
+            {% end %}
+            <li><a href="javascript:;" class="empty">...</a></li>
+            {% for i in range(pages-3,pages+1) %}
+                {% if i == offset %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="active">{{i}}</a></li>
+                {% else %}
+                    <li><a href="/admin/orders?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">{{i}}</a></li>
+                {% end %}
+            {% end %} {# end for #}
+        {% end %}
+        {% end %} {# end if if 2/3*pages<= offset <= pages% #}
+        {% if offset < pages %}
+        <li><a href="/admin/orders?offset={{offset+1}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">> </a></li>
+        {% end %}
+        <li><a href="/admin/orders?offset={{pages}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&expire={{expire}}&obexpire={{obexpire}}&obamount={{obamount}}&obstart={{obstart}}&wsales={{wsales}}" class="">>></a></li>
+        {% end %} {# end if pages #}
+    </ul>
+<div class="modal-ct modal-ct-s-4">
+        <img class="mclose 3" src="{{static_url("img/close.png")}}"/>
+        <h2>订单详情</h2>
+        <div class="modal-dt">
+            <form id="oform" class="mform" action="/admin/orders/">
+                {% raw xsrf_form_html() %}
+                <div class="data">
+                </div>
+                <div class="frow" style="text-align: center;">
+                    <input type="submit" class="n_addbtn sbtn" value="提交" style="background-color: #17578d;color:#fff;"/>
+
+                    <div class="tips"><span></span></div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+<div class="modal-ct modal-ct-s-5">
+        <img class="mclose 3" src="{{static_url("img/close.png")}}"/>
+        <h2>添加子订单</h2>
+        <div class="modal-dt">
+            <form id="soform" class="mform" action="/admin/orders/suborder/">
+                {% raw xsrf_form_html() %}
+                <div class="data">
+                </div>
+                <div class="frow" style="text-align: center;">
+                    <input type="submit" class="n_sobtn sbtn" value="提交" style="background-color: #17578d;color:#fff;"/>
+                    <div class="tips"><span></span></div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+{% end %}

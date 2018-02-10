@@ -1,0 +1,24 @@
+<!-- 加载头部模板文件-->
+{% include "tpl/head.html" %}
+<body>
+
+<!-- 加载导航模板文件-->
+{% include "tpl/nav.html" %}
+<img src="{{ static_url("img/visitidc.png")}}"/>
+
+<!-- 产品内容-->
+<div class="content news-cont">
+    <div class="news">
+        <h3 style="text-align: center;margin-top: 20px;">{{news[1]}}</h3>
+        <p style="text-align: center;border-bottom: 1px solid #ccc;">{{ str(news[4]).split(" ")[0]}}</p>
+    </div>
+    <div class="article">
+        {% raw news[2] %}
+    </div>
+</div>
+
+<!-- 加载底部模板文件-->
+{% include "tpl/footer.html" %}
+
+</body>
+</html>

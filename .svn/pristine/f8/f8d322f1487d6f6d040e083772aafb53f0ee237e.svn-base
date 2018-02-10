@@ -1,0 +1,16 @@
+<div id="nav">
+    <ul>
+        <li class="{% if active == "index" %}active {% end %}"><a href="/admin/overview/"><i class="fa fa-home fa-lg"></i><span>概览</span></a></li>
+        {% if ctype in [3,4,5] %}<li class="{% if active =="machines" %}active{% end %} machines">
+        <a href="/admin/all-machines/"><i class="fa fa-navicon fa-lg"></i><span>全部机器</span></a>{% end %}
+        {% if ctype in [2,3,4,5] %}<li class="{% if active =="add" %}active{% end %} add-machines"><a href="javascript:;"><i class="fa fa-plus-square fa-lg"></i><span>添加机器</span></a></li>{% end %}
+        {% if ctype in [1,3,4,5]%}<li class="{% if active =="bind" %}active{% end %} add-orders"><a href="javascript:;"><i class="fa fa-plus-circle fa-lg"></i><span>新增订单</span></a></li>{% end %}
+        </li>
+        {% if ctype in [1,3,4,5]%}<li class="{% if active=="orders"%}active{% end %}">
+        <a href="/admin/orders/"><i class="fa fa-calendar-check-o fa-lg"></i><span>{% if ctype in [1]%}我的订单{%else%}销售订单{% end %}</span></a>
+        </li>{% end %}
+        {% if ctype in [3,4,5] %}<li class="{% if active=="news"%}active{% end %}"><a href="admin/publish/"><i class="fa fa-newspaper-o fa-lg"></i><span>新闻发布</span></a></li>{% end %}
+        {% if ctype in [1,3,4,5] %}<li class="{% if active=="acc"%}active{% end %}"><a href="/admin/manage/"><i class="fa fa-user-circle fa-lg"></i><span>{% if ctype in [3,5]%}客户管理{% else %}我的客户{% end %}</span></a></li>{% end %}
+        {% if ctype in [3,4,5] %}<li class="{% if active=="log"%}active{% end %}"><a href="/admin/log/"><i class="fa fa-envira fa-lg"></i><span>访问日志</span></a></li>{% end %}
+    </ul>
+</div>

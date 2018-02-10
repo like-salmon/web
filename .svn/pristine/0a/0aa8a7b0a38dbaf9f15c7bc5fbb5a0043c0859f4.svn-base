@@ -1,0 +1,739 @@
+form#adlgform {
+    width: 550px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    border: 1px solid #fffffe;
+    top: 250px;
+    border-radius: 5px;
+    padding: 15px 25px;
+    text-align: center;
+    padding-top: 35px;
+}
+.content.adminlg{
+    width:100%;
+}
+
+form#adlgform .ccha {
+    width: 120px;
+    position: absolute;
+    margin-top: -2px;
+    right: -133px;
+}
+
+form#adlgform .ccha img {
+    border-radius: 5px;
+}
+
+#adlgform .frow input + i.fa {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.1s ease-in;
+    left: 0;
+    background: #2196F3;
+    color: #fff;
+    display: block;
+    padding: 4px;
+}
+#adlgform.cform .frow input + i.fa{
+    left:20px;
+}
+#adlgform .frow {
+    padding: 0;
+    margin: unset;
+    width: 258px;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+}
+
+#adlgform .frow input[type=submit] {
+    width: 100px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background: #564033;
+    color: #fff;
+}
+
+#adlgform .frow input {
+    margin-bottom: 20px;
+}
+
+#adlgform .frow input:focus + i.fa {
+    opacity: 1;
+    left: 25px;
+    transition: all 0.25s ease-out;
+}
+
+#adlgform form input.finput {
+    text-indent: 35px;
+}
+#adlgform .frow .tips{
+margin-top: 34px;
+    margin-left: 105px;
+    width: 250px;
+}
+
+.adminlg {
+    background: url("/static/img/admin_bg.jpg") no-repeat center center;
+    background-attachment: fixed;
+    transition: all 3s ease-in;
+    -moz-transition: all 5s ease-in-out;
+    -ms-transition: all 5s ease-in-out;
+    -webkit-transition: all 5s ease-in-out;
+    -o-transition: all 5s ease-in-out;
+    width: 100%;
+    padding-bottom: 100%; /*fake height*/
+}
+
+.adminlg:hover, .adminlg:focus {
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1); /* IE 9 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.1, M12=0, M21=0, M22=1.1, SizingMethod='auto expand')"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.1, M12=0, M21=0, M22=1.1, SizingMethod='auto expand'); /* IE6 and 7 */
+}
+
+.adminlg .frow .cctips{
+    margin-left: 110px;
+    width: 199px;
+}
+#osmsf{
+    text-align: right;
+    margin-bottom: 18px;
+
+}
+#smsf.sf{
+    border-bottom: 2px solid #b25b53;
+    margin-bottom: 0;
+    padding: 0;
+    height: 51px;
+}
+#smsf.sf .frow{
+        width: auto;
+    max-width:250px;
+}
+#smsf > h3{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+        margin-bottom: 21px;
+
+}
+#smsf input[type="text"],#osmsf input[type="text"]{
+    height:30px;
+    text-indent: 15px;
+}
+#smsf input[type="submit"],#osmsf input[type="submit"]{
+    width: 44px;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #af7d38;
+    color: #fff;
+}
+#smsf #mtype,#osmsf #mtype{
+    height: 30px;
+}
+.pagination li a{
+    color: #fff;
+    border: 1px solid #dddddd;
+    padding: 5px;
+    background-color: #afa7a1;
+}
+#smsf{
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    margin-bottom: 18px;
+        padding: 12px 18px;
+    position: relative;
+}
+#smsf.cform #addc{
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin-right: -21px;
+    display: block;
+    width: 120px;
+
+}
+#smsf.cform #addc span{
+    font-size: 1.1em;
+    margin-left: 8px;
+    margin-top: 2px;
+    position: absolute;
+}
+#smsf .frow.ccb{
+    padding-top: 15px;
+    width: 138px;
+}
+
+/* MODIFY USER PASSWORD */
+#mpwdform{
+    width:650px;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+#mpwdform.rform .frow{
+text-align: left;
+}
+#mpwdform.rform .frow input[type=submit]{
+
+}
+#mpwdform input[type=submit]{
+    padding: 12px 15px;
+    border-radius: 5px;
+    background-color: #17578d;
+    color: #FFF;
+}
+#mpwdform .frow label,#mpwdform .frow{
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+}
+#mpwdform .frow input[type=text],#mpwdform .frow input[type=password]{
+    background: unset;
+    border-bottom:1px solid #ccc;
+    width: 240px;
+    text-indent: 25px;
+    margin-left: 15px;
+}
+#mpwdform .frow input[type=password]:focus{
+    outline: 0;
+
+}
+#mpwdform .frow .tips{
+    top: 14px ;
+    margin-left: 216px;
+}
+/* custom check box*/
+#smsf .frow input[type=radio]{
+   position: absolute;
+  opacity: 0;
+}
+
+#smsf .frow input[type=radio] + label.checkbox{
+    display: inline-block;
+    text-align: right;
+    margin-left: 6px;
+        font-size: 28px;
+    vertical-align: -6px;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+#smsf .frow input[type=radio]:checked + label.checkbox:before{
+    content: "\f046";
+        font-size: 24px;
+}
+
+#smsf .frow input[type=radio] + label.checkbox:before{
+    font-size: 24px;
+    content: '\f096';
+    color:#000;
+}
+
+#smsf .frow{
+    width: 200px;
+    margin-left: 12px;
+    padding: 10px 15px;
+    margin-bottom: 19px;
+}
+
+#smsf .area.frow {
+width:100%;
+}
+
+#smsf .frow input[type="text"]{
+    background: unset;
+    border-bottom: 1px solid #ccc;
+}
+
+#smsf .frow label{
+    margin-left: 0;
+}
+
+#smsf .frow select{
+    height: 29px;
+    border: 1px solid #cccccc;
+}
+
+#smsf .frow .nums{
+
+}
+
+#smsf .frow .nums{
+    width:200px;
+}
+
+#smsf .frow .nums.ip{
+    width:270px;
+}
+
+#smsf .frow .nums.ip input{
+    width:200px;
+}
+
+#smsf .frow .nums input{
+    width:120px;
+}
+
+#smsf .frow .nums input:focus{
+    outline: 0;
+}
+
+.pagination li a.active{
+    background-color: #fff;
+    color: #555;
+}
+
+.pagination{
+    text-align: center;
+     margin-bottom:16px;
+    margin-top: 35px;
+}
+/* add order*/
+#add_orders .data .frow.ips .tips,#add_machines .data .frow.ips .tips,#add_machines .data .frow.asnum .tips{
+        top: 8px;
+    left: 43px;
+}
+/** panel part */
+
+
+#nav,.content.panel,#top .right ul li,#top .left img,#top .left h3,.pagination li,#smsf .frow,#smsf .frow .nums{
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+    vertical-align: top;
+}
+
+#top .right ul {
+        margin-top: 18px;
+    color: #f2f2f2;
+}
+#top .left h3 {
+    margin-top: 19px;
+    margin-left: 12px;
+    color: #f2f2f2;
+font-size: 1.1em;
+}
+#top .left{
+    width:249px;
+    float: left;
+    margin-left: 25px;
+}
+#top .left img{
+    width:49px;
+}
+
+#top .right{
+    float:right;
+    margin-right: 25px;
+}
+
+#top{
+    position: fixed;
+    z-index: 3;
+    background: #17578d;
+        width: 100%;
+    height: 58px;
+}
+
+.content.panel {
+    width: 100%;
+    min-height: 630px;
+    padding: 12px 15px;
+    padding-bottom: 40px;
+    margin-left: 18%;
+    margin-top: 59px;
+
+}
+
+#nav{
+    width:245px;
+    background: #2e4259;
+    text-align: center;
+    font-size: 1.1em;
+    color:#fff;
+    margin-top: 14px;
+    height:100%;
+    padding-top: 22px;
+    position: fixed;
+    top: 47px;
+    z-index: 3;
+    max-width:300px
+}
+#nav ul li {
+    padding: 10px 12px;
+    text-align: justify;
+    padding-left: 52px;
+}
+#nav ul li.active{
+    background:#55711c;
+}
+#nav ul li a{
+    color:#fff;
+}
+#nav ul li a span{
+    padding-left: 15px;
+    font-size: 1em;
+}
+
+/* footer*/
+#footer p{
+    text-align: center;
+    font-size: 1.1em;
+    color:#fff;
+
+}
+
+/* all machines */
+.machines_tb,.orders_tb,.financial_tb,.clients_tb{
+    width:100%;
+    border-spacing: 0 2px;
+    border-collapse: collapse;
+}
+.clients_tb tr td.idc{
+    width:160px;
+}
+.machines_tb .title,.orders_tb .title{
+        /*background-color: #f3e1c8;*/
+}
+.financial_tb.statistic tr.title td{
+    background: 0;
+    font-weight: bold;
+    color: #303030;
+}
+.financial_tb.statistic tr td.oid,.financial_tb.statistic tr td.oip,.financial_tb tr td.oid,.financial_tb tr td.oip{
+    width: 181px;
+}
+/* statistic*/
+.financial_tb.statistic ~ p#sp{
+    text-align: right;
+}
+.financial_tb.statistic ~ p#sp span{
+    margin-right: 12px;
+}
+.machines_tb .title td,.orders_tb .title td,.financial_tb .title td,.clients_tb .title td{
+    text-align: center;
+    background: #dfe6cf;
+}
+.financial_tb .title td{
+    background: #d9cba3;
+}
+
+.machines_tb tr td,.orders_tb tr td,.financial_tb tr td,.clients_tb tr td{
+    padding: 12px 12px;
+    border:1px solid #ccc;
+        white-space: nowrap;
+    text-overflow: initial;
+    overflow: hidden;
+    text-align: center;
+}
+
+.financial_tb tr td{
+    border: 0;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.machines_tb tr td input[type="text"],.orders_tb tr td input[type="text"],.financial_tb tr td input[type="text"],.clients_tb tr td input[type="text"]{
+    background: #f7f7f7;
+        text-align: center;
+    width: 100%;
+    height: 15px;
+}
+.machines_tb tr td span,.financial_tb tr td span,.orders_tb tr td span,.clients_tb tr td span{
+    cursor: pointer;
+}
+.machines_tb tr td.ltd{
+    position: relative;
+}
+.machines_tb tr td.ltd .loading{
+    margin-right: 37px;
+    top: 10px;
+}
+table tr td span{
+        font-size: 0.9em;
+}
+.machines_tb tr td input:disabled,.orders_tb tr td input:disabled,.financial_tb tr td input:disabled,.clients_tb tr td input:disabled{
+    border:0;
+    /*text-overflow: ellipsis;*/
+}
+.machines_tb tr td input,.machines_tb tr td select{
+    border:1px solid red;
+}
+.orders_tb tr td.cf{
+    width:180px;
+}
+/* modal form css*/
+.mform .frow{
+    padding: 7px 16px;
+    margin-bottom: 22px;
+    margin-left: 109px;
+    width: 450px;
+    text-align: justify;
+        position: relative;
+}
+.mform .data .frow input{
+    background: unset;
+    border-bottom: 1px solid #ccc;
+    text-indent: 15px;
+        margin-left: 175px;
+    width: 210px;
+}
+.mform .data .frow input:focus{
+    outline: none;
+}
+.mform .data .frow label{
+font-size: 1.1em;
+    font-weight: 700;
+    margin-right: 14px;
+    color: #6e6767;
+    position: absolute;
+}
+.mform .data .frow select{
+    background: unset;
+    padding: 6px 8px;
+    margin-left: 168px;
+    border: 1px solid #ccc;
+}
+.mform .data{
+    min-height: 460px;
+}
+
+.mform .frow .sbtn{
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 5px;
+    width: 120px;
+    padding: 10px 12px;
+}
+
+.mform .frow .tips {
+    position: absolute;
+    top: -48px;
+    margin-left: 143px;
+}
+.mform .frow div.tips span{
+    margin-left: 6px;
+    margin-top: -12px;
+}
+.fa-check-circle-o,.fa-check-circle-o ~span{
+    color:limegreen;
+}
+.fa-times-circle-o,.fa-times-circle-o ~span{
+    color:red;
+}
+.fa-info-circle,.fa-info-circle ~span{
+    color:#c9c5c5;
+}
+
+/* orders*/
+#summary{text-align: right}
+#summary span em{
+    color:red;
+    padding: 5px 7px;
+}
+#summary span{
+    margin-right: 12px;
+}
+.orders_tb tr td span{
+    cursor: pointer;
+}
+.orders_tb tr.title td{
+    position: relative;
+}
+.orders_tb tr.title td a{
+    color: #555;
+}
+.orders_tb tr.title td a.top{
+    margin-top: -9px;
+    margin-left: 1px;
+}
+.orders_tb tr.title td a.bottom{
+    margin-left: 1px;
+    margin-top: 8px;
+}
+.orders_tb tr.title td#eptitle a,.orders_tb tr.title td#pmtitle a,.orders_tb tr.title td#dp a{
+    position: absolute;
+}
+.orders_tb tr.title td#pmtitle a{
+
+}
+.orders_tb tr.title td#eptitle a{
+
+}
+.orders_tb tr td span:hover,.financial_tb tr td span:hover{
+    color:#0f68d3;
+    font-weight: 600;
+    transition: color .6s ease-in-out;
+}
+
+form#oform .sbtn {
+    width: 100px;
+}
+#oform .frow .otip{
+    color:red;
+    margin-left: 174px;
+    margin-top: 3px;
+}
+
+#oform .frow .auditbtn{
+    background-color: #af7d38;
+    color:#fff;
+    margin-left: 29px;
+}
+/* response input*/
+.resp{
+    position: absolute;
+    width: 46% !important;
+    padding: 10px 12px !important;
+    text-align: left !important;
+    margin-left: -51px !important;
+    margin-top: -20px !important;
+    height: 41px !important;
+    background: #dfe6cf !important;
+    transition: all 0.25s ease-in-out;
+}
+
+.odresp{
+    position: absolute;
+    width: 65.5% !important;
+    padding: 10px 12px !important;
+    text-align: left !important;
+    margin-left: -58px !important;
+    margin-top: -20px !important;
+    height: 41px !important;
+    background: #dfe6cf !important;
+    transition: all 0.25s ease-in-out;
+}
+
+.loading{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25px;
+    top: 45%;
+    z-index: 9;
+    /* margin-left: 20px; */
+}
+/* news */
+.ntitle{
+    padding-bottom: 12px;
+    border-bottom: 1px solid #555;
+}
+.prs{
+    text-align: center;
+    margin-top: 120px;
+}
+#pform .frow{
+    width: 100%;
+    margin-left: 0;
+    height: 30px;
+    margin-top: 25px;
+    margin-bottom: 23px;
+}
+#pform .frow label{
+    margin-left: 0;
+}
+#pform .frow input{
+    width: 450px;
+    text-indent: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+#pform .frow input:focus{
+    border:0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+}
+#pform .frow #ntype{
+    width: 50px;
+    border: 1px solid #ccc;
+    margin-left: 13px;
+    padding: 5px 0px;
+}
+#pform .frow input[type=submit]{
+        padding: 10px 24px;
+    width: 120px;
+    border-radius: 5px;
+    background: #17578d;
+    color: #fff;
+}
+#pform .frow.sm{
+    text-align: right;
+}
+.note-editable p img{
+    width:initial !important;
+}
+
+/* soform*/
+#soform .data{
+    min-height: 260px;
+}
+/* footer */
+
+.wrapper{
+    height:100%;
+    position:relative;
+}
+.inner-wrap{
+max-height: 700px;
+    margin-bottom: 32px;
+}
+footer{
+    width: 100%;
+    height:50px;
+    background: #555;
+    padding-top: 15px;
+    font-size: 0.9em;
+    margin-top: 7px;
+    display: none;
+}
+
+/* confirm modal */
+
+.modal-dt-cf div.btn input{
+    background-color: #436e95 !important;
+}
+
+/* comparibility */
+@media screen and (min-width:1366px) and (max-width: 1439px){
+.content.panel{
+    width:1100px;
+}
+}
+@media screen and (min-width:1440px) and (max-width: 1599px){
+.content.panel{
+    width:1200px;
+}
+    .resp{
+         width:44.5% !important;
+    }
+    .odresp{
+         width:500px !important;
+    }
+}
+@media screen and (min-width:1600px) and (max-width: 1799px){
+.content.panel{
+    width:1250px;
+}
+}
+@media screen and (min-width:1800px) and (max-width: 1920px){
+.content.panel{
+    width:1300px;
+}
+}
+
+

@@ -1,0 +1,39 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 100113
+Source Host           : localhost:3306
+Source Database       : llidc
+
+Target Server Type    : MYSQL
+Target Server Version : 100113
+File Encoding         : 65001
+
+Date: 2017-07-21 10:10:06
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for llidc_clients
+-- ----------------------------
+DROP TABLE IF EXISTS `llidc_clients`;
+CREATE TABLE `llidc_clients` (
+  `c_id` int(11) NOT NULL AUTO_INCREMENT,
+  `c_name` varchar(255) DEFAULT NULL COMMENT 'client''s name',
+  `c_pwd` varchar(255) DEFAULT NULL COMMENT 'client''s password',
+  `c_mobile` varchar(255) DEFAULT NULL COMMENT 'client''s mobile',
+  `c_balance` varchar(255) DEFAULT NULL COMMENT 'client''s balance',
+  `c_belongsto` varchar(255) DEFAULT NULL COMMENT 'which sales this client belongs to',
+  `c_id_card` varchar(255) DEFAULT NULL COMMENT 'client''s id card number',
+  `c_address` varchar(255) DEFAULT NULL COMMENT 'client''s address',
+  `c_qq` varchar(255) DEFAULT NULL COMMENT 'client''s qq number',
+  `c_memo` varchar(255) DEFAULT NULL COMMENT 'client''s memo details',
+  PRIMARY KEY (`c_id`),
+  KEY `client` (`c_name`,`c_mobile`,`c_id_card`,`c_qq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of llidc_clients
+-- ----------------------------

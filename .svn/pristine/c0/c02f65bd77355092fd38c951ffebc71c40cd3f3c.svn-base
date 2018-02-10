@@ -1,0 +1,85 @@
+<!-- 加载头部模板文件-->
+<include file="tpl:head"/>
+
+<body>
+
+<!-- 加载导航模板文件-->
+<include file="tpl:nav"/>
+<img src="__IMG__/cloudserver.png" alt="服务器正在建设中"/>
+<!--<img src="__IMG__/servertop.png"/>-->
+<!-- 产品内容-->
+<div class="content server-cont">
+
+    <!--
+    <ul id="sul-cont">
+        <li>
+            <div class="left-title"><p>计算</p></div>
+            <div class="cont compute">
+                <ul>
+                    <li class="title">机房:</li>
+                    <li class="detail">东莞</li>
+                    <li class="detail">厦门</li>
+                </ul>
+                <ul>
+                    <li class="title">CPU:</li>
+                    <li class="detail">2核</li>
+                    <li class="detail">4核</li>
+                    <li class="detail">8核</li>
+                    <li class="detail">16核</li>
+                </ul>
+                <ul>
+                    <li class="title">内存:</li>
+                    <li class="detail">2G</li>
+                    <li class="detail">4G</li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="left-title"><p>网络</p></div>
+            <div class="cont">
+                <ul>
+                    <li class="title">线路:</li>
+                    <li class="detail">电信</li>
+                    <li class="detail">BGP</li>
+                    <li class="detail">双线</li>
+                    <li class="detail">三线</li>
+                    <li class="detail">CN2</li>
+                </ul>
+                <ul>
+                    <li class="title">带宽:</li>
+                    <li>
+                        <input type="range" id="range" class="range-input" step="100" min="1" max="1001"/>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="left-title"><p>存储</p></div>
+            <div class="cont">
+
+            </div>
+        </li>
+        <li>
+            <div class="left-title"><p>其他</p></div>
+            <div class="cont">
+
+            </div>
+        </li>
+    </ul>
+    -->
+
+</div>
+<!-- 加载底部模板文件-->
+<include file="tpl:footer"/>
+
+
+<script type="text/javascript">
+
+    $("#sul-cont .cont ul li.detail").on("click",function(){
+        if($(this).hasClass("active"))return;
+        $(this).addClass("active").siblings().removeClass("active");
+    })
+</script>
+
+</body>
+</html>

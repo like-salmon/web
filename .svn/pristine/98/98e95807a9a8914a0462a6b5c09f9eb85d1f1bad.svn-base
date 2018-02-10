@@ -1,0 +1,87 @@
+{% extends "admin_panel.html" %}
+{% block content %}
+
+    <form method="get" id="smsf" class="sf">
+
+        <div class="frow">
+                    <label>销售:</label>
+        <select name="sid" id="sid">
+            <option value="18" {% if '18' == sid %} selected {% end %}>劳兴华</option>
+            <option value="19" {% if '19' == sid %} selected {% end %}>陶秋梅</option>
+            <option value="20" {% if '20' == sid %} selected {% end %}>唐晓珍</option>
+            <option value="21" {% if '21' == sid %} selected {% end %}>黄小恩</option>
+            <option value="22" {% if '22' == sid %} selected {% end %}>廖超</option>
+            <option value="23" {% if '23' == sid %} selected {% end %}>测试</option>
+        </select>
+        </div>
+
+        <div class="frow sdt">
+            <label>开始时间:</label><input type="text" value="{{sdt if sdt else ''}}" name="sdt" id="sdt"/>
+        </div>
+
+        <div class="frow edt">
+            <label>结束时间:</label><input type="text" value="{{edt if edt else ''}}" name="edt" id="edt"/>
+        </div>
+
+        <div class="frow">
+            <input type="submit" value="筛选"/>
+        </div>
+
+    </form>
+    <table class="financial_tb statistic">
+        <tbody>
+        <tr class="title">
+            <td>流水号</td>
+            <td>订单编号</td>
+            <td>机器IP</td>
+            <td>客户账号</td>
+            <td>业务员</td>
+            <td>订单类型</td>
+            <td>订单金额</td>
+            <td>提成金额</td>
+            <td>提成基准</td>
+            <td>记录时间</td>
+            <td>订单备注</td>
+        </tr>
+        {% if flogs %}
+        {% from datetime import datetime %}
+        {% set s=0 %}
+        {% set c=0 %}
+        {% set k = 0 %}
+
+        {% for i in flogs %}
+        {% set k+= 1%}
+        {% set s = s + float(i[6]) %}
+        {% set  c = c+ float(i[17]) %}
+            <tr class="olist">
+                <td class="tid">{{i[0]}}</td>
+                <td class="oid"><input type="text" disabled="disabled" name="oid" class="oid" value="{{i[1]}}"/></td>
+                <td class="oip"><input type="text" disabled="disabled" name="ip" class="ip" value="{{i[2]}}"/></td>
+                <td><input type="text" disabled="disabled" name='ost' class='ost'value="{{ i[3]}}"/></td>
+                <td><input type="text" disabled="disabled" name='oet' class='oet' value="{{ i[4].split(',')[1] }}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[8].split(',')[1]}}"/></td>
+                <td><input type="text" name='opm' class='opm' disabled="disabled" value="{{i[6] if i[6] else 0}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[17]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{str(float(i[18])*100)+'%' if i[18][0] =='0' else i[18] + u'元/台'}}"/></td>
+                <td><input type="text" disabled="disabled" name='rt' class='rt'value="{{ datetime.strftime(i[19],'%Y/%m/%d')}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[20] if i[20] else ''}}"/></td>
+            </tr>
+        {% end %}
+        </tbody>
+    </table>
+<hr />
+        <p id="sp"><span>总共:{{k}}条订单</span><span class="ss">总销售额:{{s}}元</span><span class="sc">总提成:{{c}}元</span></p>        {% end %}
+{% end %}
+{% block script %}
+<script type="text/javascript">
+        $.datetimepicker.setLocale('ch');
+        $("#smsf #sdt,#smsf #edt").datetimepicker({
+            lang: "ch", //语言选择中文 注：旧版本 新版方法：$.datetimepicker.setLocale('ch');
+            format: "Y/m/d",      //格式化日期
+            timepicker: false,    //关闭时间选项
+            yearStart: 2000,     //设置最小年份
+            yearEnd: 2050,        //设置最大年份
+            todayButton: false    //关闭选择今天按钮
+        });
+</script>
+{% end %}

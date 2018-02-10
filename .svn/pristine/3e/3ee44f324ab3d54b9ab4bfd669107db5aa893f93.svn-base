@@ -1,0 +1,298 @@
+{% extends "admin_panel.html" %}
+{% block content %}
+
+    <form method="get" id="smsf">
+        <h3><i class="fa fa-search fa-lg"></i>搜索订单</h3>
+        <div class="frow">
+                    <label>销售:</label>
+        <select name="sid" id="sid">
+            <option value="18" {% if '18' == sid %} selected {% end %}>劳兴华</option>
+            <option value="19" {% if '19' == sid %} selected {% end %}>陶秋梅</option>
+            <option value="20" {% if '20' == sid %} selected {% end %}>唐晓珍</option>
+            <option value="21" {% if '21' == sid %} selected {% end %}>黄小恩</option>
+            <option value="22" {% if '22' == sid %} selected {% end %}>廖超</option>
+            <option value="23" {% if '23' == sid %} selected {% end %}>测试</option>
+        </select>
+
+        </div>
+        <div class="frow">
+            <label>订单类型:</label>
+                <select id='ptype' name='ptype'>
+                    <option value='r,普通机托管' {% if 'r' in stype %}selected{% end %}>普通机托管</option>
+                    <option value='s,普通机租用' {% if 's' in stype %}selected{% end %}>普通机租用</option>
+                    <option value='t,高防机托管' {% if 't' in stype %}selected{% end %}>高防机托管</option>
+                    <option value='u,高防机租用' {% if 'u' in stype %}selected{% end %}>高防机租用</option>
+                    <option value='v,代理机托管' {% if 'v' in stype %}selected{% end %}>代理机托管</option>
+                    <option value='w,代理机租用' {% if 'w' in stype %}selected{% end %}>代理机租用</option>
+                    <option value='x,机柜出租' {% if 'x' in stype %}selected{% end %}>机柜出租</option>
+                    <option value="k,加带宽" {% if 'k' in stype %}selected{% end %}>加带宽</option>
+                    <option value="l,加防护" {% if 'l' in stype %}selected{% end %}>加防护</option>
+                    <option value="f,续期" {% if 'f' in stype %}selected{% end %}>续期</option>
+
+
+                </select>
+        </div>
+        <div class="frow sdt">
+            <label>开始时间:</label><input type="text" value="{{sdt if sdt else ''}}" name="sdt" id="sdt"/>
+        </div>
+        <div class="frow edt">
+            <label>结束时间:</label><input type="text" value="{{edt if edt else ''}}" name="edt" id="edt"/>
+        </div>
+
+        <div class="area frow">
+            <div class="nums">
+                <label>客户账号:</label><input type="text" name="u_acc" class="u_acc" value="{{u_acc}}"/>
+            </div>
+            <div class="nums ip">
+                <label>机器IP:</label><input type="text" name="ips" class="ips" value="{{ips}}"/>
+            </div>
+
+            <div class="nums">
+                <label>订单编号:</label><input type="text" name="oid" class="oid" value="{{oid}}"/>
+            </div>
+            <div class="nums">
+                <input type="submit" value="筛选"/>
+            </div>
+        </div>
+
+    </form>
+    <h3>订单列表</h3>
+    <table class="financial_tb">
+        <tbody>
+        <tr class="title">
+            <td>流水号</td>
+            <td class="oid">订单编号</td>
+            <td class="oip">机器IP</td>
+            <td>客户账号</td>
+            <td>业务员</td>
+            <td>订单类型</td>
+            <td>订单金额</td>
+            <td>提成金额</td>
+            <td>提成基准</td>
+            <td>记录时间</td>
+            <td>订单备注</td>
+            <td>操作</td>
+        </tr>
+        {% if flogs %}
+        {% from datetime import datetime %}
+        {% for i in flogs %}
+            <tr class="olist">
+                <td class="tid">{{i[0]}}</td>
+                <td><input type="text" disabled="disabled" name="oid" class="oid" value="{{i[1]}}"/></td>
+                <td><input type="text" disabled="disabled" name="ip" class="ip" value="{{i[2]}}"/></td>
+                <td><input type="text" disabled="disabled" name='ost' class='ost'value="{{ i[3]}}"/></td>
+                <input type="hidden" name="comid" class="comid" value="{{i[11]}}"/>
+                <td><input type="text" disabled="disabled" name='oet' class='oet' value="{{ i[4].split(',')[1] }}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[8].split(',')[1]}}"/></td>
+                <td><input type="text" name='opm' class='opm' disabled="disabled" value="{{i[6] if i[6] else 0}}"/></td>
+                <td><input type="text" name='com' class='com'disabled="disabled" value="{{i[17]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{str(float(i[18])*100)+'%' if i[18][0] =='0' else i[18] + u'元/台'}}"/></td>
+                <td><input type="text" disabled="disabled" name='rt' class='rt'value="{{ datetime.strftime(i[19],'%Y/%m/%d')}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[20] if i[20] else ''}}"/></td>
+                <td>{% if i[8].split(',')[0] in ['v','w','rv','rw'] %}<span class="edit">编辑</span>{% end %}<span class="remove"></span></td>
+            </tr>
+        {% end %}
+        {% end %}
+        </tbody>
+    </table>
+    <ul class="pagination">
+
+        {% if pages and 1< pages <= 24 %}
+        {% for i in range(1,pages+1) %}
+            {% if i == offset %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a></li>
+                    {% else %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a></li>
+                    {% end %}
+            {% end %}
+        {% end %}
+
+        {% if pages and pages > 24 %}
+        {# ------ #}
+        <li><a href="/admin/financial?offset={{1}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class=""><<</a></li>
+
+        {% if offset > 1%}
+            <li><a href="/admin/financial?offset={{offset-1}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class=""><</a></li>
+        {% end %}
+        {% if offset < pages/3 %}
+            {% if (pages/3 - offset) >6 and offset >9  %}
+               {% for i in range(1,5) %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a>
+                    {% end %}
+                    <li><a href="javascript:;" class="empty">...</a>
+                    {% for i in range(offset-2,offset+3) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a>
+                    {% end %}
+                    {% end %}
+            {% elif (pages/3 - offset) > 6 and offset <=9  %}
+                {% for i in range(1,offset+4) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a>
+                    {% end %}
+                {% end %}
+        {% elif (pages/3 - offset) <= 6 and offset>9  %}
+            {% for i in range(1,5) %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a>
+                    {% end %}
+                    <li><a href="javascript:;" class="empty">...</a>
+                    {% for i in range(offset-3,offset+3) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a>
+                    {% end %}
+                    {% end %}
+        {% elif (pages/3 - offset) <= 6 and offset <= 9  %}
+            {% for i in range(1,offset+4) %}
+                    {% if i == offset %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a>
+                    {% else %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a>
+                    {% end %}
+                {% end %}
+    {% end %}
+
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages/2-3,pages/2+3) %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}">{{i}}</a></li>
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages-3,pages+1) %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}">{{i}}</a></li>
+        {% end %}
+        {% end %} {# end if offset 1/3 #}
+
+        {# ------ #}
+
+        {# 1/3 ~ 2/3 part #}
+        {% if pages/3 <= offset <= pages/3*2 %}
+        {% for i in range(1,5) %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}">{{i}}</a></li>
+        {% end %}{# end for #}
+
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(offset-3,offset+4) %}
+        {% if i == offset %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a></li>
+            {% else %}
+        <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}">{{i}}</a></li>
+        {% end %} {# end if #}
+
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages-3,pages+1) %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}">{{i}}</a></li>
+        {% end %} {# end for #}
+        {% end %} {# end if offset 2/3 #}
+
+        {# ------ #}
+
+        {# pages-3 part #}
+        {% if pages/3*2 < offset <= pages %}
+        {% for i in range(1,6) %}
+            {% if i == offset %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a></li>
+            {% else %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a></li>
+            {% end %}
+        {% end %}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% for i in range(pages/2-3,pages/2+3) %}
+            {% if i == offset %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a></li>
+            {% else %}
+            <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a></li>
+            {% end %}
+        {% end %} {# end for #}
+        <li><a href="javascript:;" class="empty">...</a></li>
+
+        {% if pages - offset < 6 %}
+            {% for i in range(offset-2,pages+1) %}
+            {% if i == offset %}
+                <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a></li>
+            {% else %}
+                <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a></li>
+            {% end %}
+            {% end %}
+        {% else %}
+            {% for i in range(offset-2,offset+2) %}
+                {% if i == offset %}
+                <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a></li>
+                {% else %}
+                <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a></li>
+                {% end %}
+            {% end %}
+            <li><a href="javascript:;" class="empty">...</a></li>
+            {% for i in range(pages-3,pages+1) %}
+                {% if i == offset %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="active">{{i}}</a></li>
+                {% else %}
+                    <li><a href="/admin/financial?offset={{i}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">{{i}}</a></li>
+                {% end %}
+            {% end %} {# end for #}
+        {% end %}
+        {% end %} {# end if if 2/3*pages<= offset <= pages% #}
+        {% if offset < pages %}
+        <li><a href="/admin/financial?offset={{offset+1}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">> </a></li>
+        {% end %}
+        <li><a href="/admin/financial?offset={{pages}}&u_acc={{u_acc}}&ips={{ips}}&stype={{stype}}&sdt={{sdt}}&edt={{edt}}&sid={{sid}}&oid={{oid}}" class="">>></a></li>
+        {% end %} {# end if pages #}
+    </ul>
+<div class="modal-ct modal-ct-s-4">
+        <img class="mclose 3" src="{{static_url("img/close.png")}}"/>
+        <h2>订单详情</h2>
+        <div class="modal-dt">
+            <form id="oform" class="mform" action="/admin/financial/">
+                {% raw xsrf_form_html() %}
+                <div class="data">
+                </div>
+                <div class="frow" style="text-align: center;">
+                    <input type="submit" class="n_addbtn sbtn" value="提交" style="background-color: #17578d;color:#fff;"/>
+
+                    <div class="tips"><span></span></div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+<div class="modal-ct modal-ct-s-5">
+        <img class="mclose 3" src="{{static_url("img/close.png")}}"/>
+        <h2>添加子订单</h2>
+        <div class="modal-dt">
+            <form id="soform" class="mform" action="/admin/financial/suborder/">
+                {% raw xsrf_form_html() %}
+                <div class="data">
+                </div>
+                <div class="frow" style="text-align: center;">
+                    <input type="submit" class="n_sobtn sbtn" value="提交" style="background-color: #17578d;color:#fff;"/>
+                    <div class="tips"><span></span></div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+{% end %}
+{% block script %}
+<script type="text/javascript">
+        $.datetimepicker.setLocale('ch');
+        $("#smsf #sdt,#smsf #edt").datetimepicker({
+            lang: "ch", //语言选择中文 注：旧版本 新版方法：$.datetimepicker.setLocale('ch');
+            format: "Y/m/d",      //格式化日期
+            timepicker: false,    //关闭时间选项
+            yearStart: 2000,     //设置最小年份
+            yearEnd: 2050,        //设置最大年份
+            todayButton: false    //关闭选择今天按钮
+        });
+</script>
+{% end %}

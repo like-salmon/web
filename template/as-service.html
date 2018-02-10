@@ -1,0 +1,129 @@
+{% include "tpl/head.html" %}
+{% include "tpl/nav.html"%}
+<style>
+        body{background-color: #ffffff;}
+</style>
+<img src="{{static_url("img/shouhou_ban.jpg")}}"/>
+<div class="content as-service" style="min-height:480px;position: relative;">
+    <div style="margin-left: 93px;padding-top: 20px;">
+    <h3>售后服务标准:</h3>
+    <ul class="nul">
+        <li class="active" data-target="state-01"><i></i><p>基础服务</p><div></div></li>
+        <li data-target="state-02"><i></i><p>硬件服务</p><div></div></li>
+        <li data-target="state-03"><i></i><p>软件服务</p><div></div></li>
+        <li data-target="state-04"><i></i><p>网络安全服务</p></li>
+    </ul>
+    <table id="as-table">
+        <tbody>
+        <th id="state-01">基础服务</th>
+        <tr class="title">
+            <th>基础支持</th>
+            <th>支持内容</th>
+        </tr>
+        <tr>
+            <td>7x24在线客服</td>
+            <td>提供24小时QQ在线客服支持服务，协助用户处理相关故障 </td>
+        </tr>
+        <tr>
+            <td>7x24客服电话</td>
+            <td>提供24小时免费客服电话，协助用户处理相关故障 </td>
+        </tr>
+        <tr>
+            <td>网站备案支持</td>
+            <td>协助用户提交网站备案，每台服务器最大网站备案数量不超过30个 </td>
+        </tr>
+        <tr>
+            <td>快递代收代发 </td>
+            <td>免费代用户收寄服务器或配件，快递费由用户负责</td>
+        </tr>
+        <tr>
+            <td>硬件配件寄存 </td>
+            <td>为用户提供临时的服务器或配件寄存服务</td>
+        </tr>
+        </tbody>
+        <tbody>
+        <th id="state-02">硬件服务</th>
+        <tr class="title">
+            <th>基础支持</th>
+            <th>支持内容</th>
+        </tr>
+        <tr>
+            <td>7x24无限次重启服务</td>
+            <td>免费提供7X24小时无限次重启服务 </td>
+        </tr>
+        <tr>
+            <td>服务器上架下架</td>
+            <td>协助用户将服务器部署上架或者下架寄出，包括电力和网络部署等</td>
+        </tr>
+        <tr>
+            <td>服务器硬件安装和更换</td>
+            <td>协助用户更换或添加服务器配件</td>
+        </tr>
+        <tr>
+            <td>服务器硬件故障检测 </td>
+            <td>在用户授权情况下，协助用户开箱检测和分析服务器硬件故障 </td>
+        </tr>
+        </tbody>
+        <tbody>
+        <th id="state-03">软件服务</th>
+        <tr class="title">
+            <th>基础支持</th>
+            <th>支持内容</th>
+        </tr>
+        <tr>
+            <td>7x24操作系统重装</td>
+            <td>免费为用户重装操作系统，特殊情况下需要用户提供相关驱动程序 </td>
+        </tr>
+        <tr>
+            <td>服务器系统环境配置 </td>
+            <td>协助用户部署服务器系统环境，例如WEB、FTP、DNS、MAIL、数据库、防火墙、杀毒等，此项服务收费 </td>
+        </tr>
+        <tr>
+            <td>服务器密码重置</td>
+            <td>在用户授权的情况下，为用户破解初始化操作系统密码 </td>
+        </tr>
+        <tr>
+            <td>服务器远程桌面或SSH配置</td>
+            <td>协助用户处理远程无法连接等故障，初始化配置远程桌面或者SSH </td>
+        </tr>
+        <tr>
+            <td>服务器安全策略配置（上架一次性）</td>
+            <td>协助用户配置常规的服务器安全设置 </td>
+        </tr>
+        <tr>
+            <td>服务器软件故障检测</td>
+            <td>在用户授权的情况下，协助用户检测常用软件的运行情况，例如IIS、apache等</td>
+        </tr>
+
+        </tbody>
+
+        <tbody>
+        <th id="state-04">网络安全服务</th>
+        <tr class="title">
+            <th>基础支持</th>
+            <th>支持内容</th>
+        </tr>
+        <tr>
+            <td>DDOS流量清洗</td>
+            <td>免费为用户提供2G级别的硬件防火墙服务，用户可付费提高防御级别 </td>
+        </tr>
+        <tr>
+            <td>异地容灾备份</td>
+            <td>为用户提供异地容灾备份服务，此项为收费服务 </td>
+        </tr>
+        <tr>
+            <td>无缝移机服务</td>
+            <td>协助用户将服务器网站从A服务器安全、无缝的迁移到B服务器，期间为用户提供备机服务，此项为收费服务</td>
+        </tr>
+        <tr>
+            <td>服务器状态监控</td>
+            <td>通过监控设备，为客户监控服务器运行情况，在服务出现异常时告警，此项为收费服务</td>
+        </tr>
+        </tbody>
+    </table>
+        </div>
+</div>
+
+
+{% include "tpl/footer.html" %}
+
