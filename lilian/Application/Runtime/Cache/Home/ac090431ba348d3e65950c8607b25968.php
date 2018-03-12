@@ -825,7 +825,7 @@
 </div>
 <!-- body 最后 -->
 <script type="text/javascript" src="/Public/js/jquery-1.9.1.min.js?v=20170209"></script>
-<script type="text/javascript" src="/Public/js/custom.js?v=20170209"></script>
+<script type="text/javascript" src="/Public/js/frontend.js?v=20170209"></script>
 <script type="text/javascript">
     $("document").ready(function(){
         //function(classname,event,target,shtabs,active)

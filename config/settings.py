@@ -11,7 +11,6 @@ websettings={
 "cookie_secret": "bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E=",
 "xsrf_cookies": True,
 "login_url": "/admin/",
-"ui_modules": wmodules,
 "debug":True,
 "op":["李富城"],
 "ndir":"D:\\web\\llidc-local\\static\\img\\news\\",#path for saving news images

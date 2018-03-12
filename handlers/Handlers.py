@@ -16,7 +16,7 @@ from config.settings import com_config,renew_com_config,financial_log,msg_config
 from tornado.httpclient import AsyncHTTPClient
 from tornado.httputil import url_concat
 from collections import OrderedDict
-from io import BytesIO as StringIO #py2.7 will confuse about StringIO
+from io import BytesIO as StringIO #py2.7 confuses about StringIO
 from pyexcel_xlsx import save_data
 
 __metaclass__ = type
@@ -25,21 +25,20 @@ class baseHandler(tornado.web.RequestHandler):
     def __init__(self,application,*args,**kwds):
         tornado.web.RequestHandler.__init__(self,application,*args,**kwds)
         self.thisyear = dt.now().year
-        self.ctype = ""#user type
-        self.uname = ""#user name
         #print self.get_secure_cookie("_n")
         x_real_ip = self.request.headers.get("X-Real-IP")
         self.ua = self.request.headers.get("User-Agent")
         self.path = self.request.uri
         self.remote_ip = x_real_ip or self.request.remote_ip  # when use nginx we get x_real_ip or we just get remote_ip
-        if self.get_secure_cookie("_ac") and not self.ctype:
+        self.pack={}
+        if self.get_secure_cookie("_ac"):
             if self.request.uri.startswith("/admin"):
                 sql = "SELECT * FROM llidc_employees"
                 where = "binary u_acc = '%s'" % self.get_secure_cookie("_ac")
                 em = self.db.where(where).getone(sql)
-                self.ctype = em[5]
-                self.uname = em[2]
-                self.eid = em[0]
+                self.pack["ctype"]=em[5]
+                self.pack["uname"] = em[2]
+                self.pack["eid"] = em[0]
             #elif self.request.uri.startswith("/client"):
 
     def get_current_user(self):
@@ -62,7 +61,20 @@ class baseHandler(tornado.web.RequestHandler):
                 self.write(line)
             self.finish()
         elif status_code:
-            return self.render("error.html",active="index")
+            self.pack["active"] = "index"
+            return self.render("error.html",**self.pack)
+
+    def set_default_headers(self):
+        """set header for ajax cors support"""
+        #print("setting headers!!!")
+        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Headers", "x-requested-with")
+        self.set_header('Access-Control-Allow-Methods', ' PUT, DELETE, OPTIONS')
+
+    def options(self):
+        # no body
+        self.set_status(204)#for prelight request ,no data is sent.204 means browser wont reflesh itself,205 means clean up all form data.
+        self.finish()
 
     @property
     def db(self):
@@ -72,22 +84,23 @@ class mainHandler(baseHandler):
     def get(self):
         #self.send_error(404)
         #time.sleep(random.choice(range(3,6)))
-        active ="index"
+        self.pack["active"] = "index"
         sql = "select * from llidc_news"
         newscond = "n_type = 1"
         noticecond = "n_type = 2"
-        news = self.db.where(newscond).orderby("n_datetime","desc").limit(4).getmany(sql)
+        self.pack["news"] = self.db.where(newscond).orderby("n_datetime","desc").limit(4).getmany(sql)
         #news = self.db.orderby("n_datetime", "desc").limit(4).getmany(sql)
-        notices = self.db.where(noticecond).orderby("n_datetime","desc").limit(4).getmany(sql)
-        return self.render("index.html",active=active,news = news,notices = notices)
+        self.pack["notices"] = self.db.where(noticecond).orderby("n_datetime","desc").limit(4).getmany(sql)
+        return self.render("index.html",**self.pack)
+
     def post(self):
         pass
 
 class rentHandler(baseHandler):
 
     def get(self):
-        active ="rent"
-        return self.render("rent.html",active=active)
+        self.pack["active"] = "rent"
+        return self.render("rent.html",**self.pack)
 
     def post(self):
         pass
@@ -95,8 +108,8 @@ class rentHandler(baseHandler):
 class hostHandler(baseHandler):
 
     def get(self):
-        active ="host"
-        return self.render("host.html",active=active)
+        self.pack["active"] = "host"
+        return self.render("host.html",**self.pack)
 
     def post(self):
         pass
@@ -104,8 +117,8 @@ class hostHandler(baseHandler):
 class contactHandler(baseHandler):
 
     def get(self):
-        active ="contact"
-        return self.render("contact.html",active=active)
+        self.pack["active"] = "contact"
+        return self.render("contact.html",**self.pack)
 
     def post(self):
         pass
@@ -113,16 +126,16 @@ class contactHandler(baseHandler):
 class solutionHandler(baseHandler):
 
     def get(self):
-        active ="slt"
-        return self.render("solution.html",active=active)
+        self.pack["active"] = "slt"
+        return self.render("solution.html",**self.pack)
 
     def post(self):
         pass
 
 class vistHandler(baseHandler):
     def get(self):
-        active ="visit"
-        return self.render("visit.html",active=active)
+        self.pack["active"] = "visit"
+        return self.render("visit.html",**self.pack)
 
     def post(self):
         pass
@@ -133,29 +146,30 @@ class newsHandler(baseHandler):
         cond = "n_id = '%s'"%id
         sql = "select * from llidc_news"
         news = self.db.where(cond).getone(sql)
-        return self.render("news.html",active=active,news = news)
+        self.pack["active"],self.pack["news"] = "index",news
+        return self.render("news.html",**self.pack)
     def post(self):
         pass
 
 class activitiesHandler(baseHandler):
     def get(self):
-        active ="solution"
-        return self.render("activities.html",active=active)
+        self.pack["active"] = "solution"
+        return self.render("activities.html",**self.pack)
     def post(self):
         pass
 
 class asServiceHandler(baseHandler):
     def get(self):
-        active = ""
-        return self.render("as-service.html", active=active)
+        self.pack["active"] = ""
+        return self.render("as-service.html", **self.pack)
     def post(self):
         self.send_error(403)
 
 class serviceContractHandler(baseHandler):
 
     def get(self):
-        active = ""
-        return self.render("service-contract.html", active=active)
+        self.pack["active"] = ""
+        return self.render("service-contract.html", **self.pack)
 
     def post(self):
         self.send_error(403)
@@ -169,6 +183,7 @@ class adminLoginHandler(baseHandler):
         imglist = imgc.saveImg()
         thiscc = imglist[1]  # 当前的验证码
         self.set_secure_cookie("cc",thiscc,expires_days=1)
+
         return self.render("admin/admin_login.html",acc=imglist[0])
 
     def post(self):
@@ -178,7 +193,7 @@ class adminLoginHandler(baseHandler):
         md5.update(ampwd + "llidc")
         ampwded = md5.hexdigest()
         sql = "SELECT * FROM llidc_employees"
-        where = "BINARY u_acc = '%s'" % uacc#case sensitive
+        where = "BINARY u_acc = '%s'" % uacc#force case sensitive
         em = self.db.where(where).getone(sql)
         active = "index"
         if ampwded == em[3]:
@@ -186,10 +201,11 @@ class adminLoginHandler(baseHandler):
             self.set_secure_cookie("_ac", em[1])
             next = self.get_argument("next", "")
             if next:
-                return self.redirect(next)  # rediret to the previous url
-            return self.redirect("/admin/redirect/")
+                return self.write(json_encode({"rs":1,"next":next}))
+                #return self.redirect(next)  # rediret to the previous url
+            return self.write(json_encode({"rs":1,"url":"/admin/redirect/"}))
         else:
-            self.redirect("/")
+            return self.write(json_encode({"rs":0}))
 
 
 #generate captcha
@@ -258,8 +274,8 @@ class checkCaptchaHandler(baseHandler):
 class adminOverviewHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        active = "index"
-        return self.render("admin/admin_overview.html",active=active,ctype=self.ctype,eid=self.eid)
+        self.pack["active"] = "index"
+        return self.render("admin/admin_overview.html",**self.pack)
 
     def post(self):
         self.send_error(403)
@@ -309,23 +325,36 @@ class adminAllMahcinesHandler(baseHandler):
                 condition += " and m_bm_ip = '%s'"%lip
         if mstatus:
             condition += " and m_status regexp '%s'" %mstatus
-        count = self.db.where(condition).getsum(csql)  # total num of machines
+        self.pack["count"] = self.db.where(condition).getsum(csql)  # total num of machines
         # print count
-        if count % num == 0:
-            pages = count // num
+        if self.pack["count"] % num == 0:
+            self.pack["pages"] = self.pack["count"] // num
         else:
-            pages = count // num + 1
-        ms = self.db.where(condition).orderby(field, "desc").limit((offset) * 13, num).getmany(sql)
+            self.pack["pages"] = self.pack["count"] // num + 1
+        self.pack["ms"] = self.db.where(condition).orderby(field, "desc").limit((offset) * 13, num).getmany(sql)
+        self.pack["active"] = "machines"
+        self.pack["mtype"] = mtype
+        self.pack["mroom"] = mroom
+        self.pack["cnum"] = cnum
+        self.pack["mstatus"] = mstatus
+        self.pack["ips"] = ips
         if mtype == "0":
-            return self.render("admin/admin_machines.html", ms=ms, count=count, active="machines", pages=pages,offset=offset+1,ctype = self.ctype,eid=self.eid,mtype = mtype,mroom = mroom,cnum = cnum,anum = anum,onum = onum,mstatus=mstatus,ips=ips)
+            self.pack["offset"] = offset +1
+            self.pack["anum"] = anum
+            self.pack["onum"] = onum
+            return self.render("admin/admin_machines.html", **self.pack)
         elif mtype == "1":#blade machine
-            return self.render("admin/admin_machines_bm.html", ms=ms, count=count, active="machines", pages=pages,offset=offset + 1, ctype=self.ctype, eid = self.eid,mtype=mtype,mroom = mroom,cnum = cnum,bm_mnum = bm_mnum,lip = lip,mstatus=mstatus,ips=ips)
+            self.pack["offset"] = offset + 1
+            self.pack["bm_mnum"] = bm_mnum
+            self.pack["lip"] = lip
+            return self.render("admin/admin_machines_bm.html",**self.pack)
 
 
 class adminRedirectHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        return self.render("admin/admin_redirect.html",active = "index",ctype = self.ctype,eid=self.eid)
+        self.pack["active"] = "index"
+        return self.render("admin/admin_redirect.html",**self.pack)
 
 class adminMachinesHandler(baseHandler):
     def get(self):
@@ -353,10 +382,13 @@ class adminMachinesHandler(baseHandler):
             values = (ip, loca, cabi, num, wy_num, bw, status, config, memo,mtype)
         result = self.db.insertone(sql,values)
         if result:
-            self.finish(json_encode({"rs":"1024"}))#successfully added the machine
+            self.pack["active"] = "add_machines"
+            self.pack["reason"] = "机器"
+            self.pack["curl"] = "/admin/add-machines/"
+            return self.render("admin/admin_addredirect.html",**self.pack)
+            #self.finish(json_encode({"rs":"1024"}))#successfully added the machine
         else:
-            self.finish(json_encode({"rs": "1025"}))  # fail to  add the machine
-
+            return self.send_error(500)
 
 class adminMachineCheckHandler(baseHandler):
     @tornado.web.authenticated
@@ -417,7 +449,6 @@ class adminMachineCheckHandler(baseHandler):
                     return self.finish(json_encode({"rs": "1046","exip":exip}))
                 else:
                     return self.finish(json_encode({"rs": "1047"}))# if this ip doesn't exist
-
         else:
             #check if there is assert num
             ascond = "m_num regexp '%s$'"%asnum
@@ -427,12 +458,30 @@ class adminMachineCheckHandler(baseHandler):
             else:
                 return self.finish(json_encode({"rs": "1049"}))  # assert num available
 
+class adminAddMachinesHandler(baseHandler):
+    @tornado.web.authenticated
+    def get(self):
+        self.pack["active"] = "add_machines"
+        return self.render("admin/admin_add_machines.html",**self.pack)
+
+    def post(self):
+        pass
+
+class adminAddOrderHandler(baseHandler):
+    @tornado.web.authenticated
+    def get(self):
+        self.pack["active"] = "add_orders"
+        return self.render("admin/admin_add_orders.html",**self.pack)
+
+    def post(self):
+        pass
+
 class adminOrdersHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
         """join machines and orders table"""
         offset = int(self.get_argument("offset", "1")) - 1
-        wsales = self.get_argument("wsales",str(self.eid)+','+self.uname)#which sales'order
+        wsales = self.get_argument("wsales",str(self.pack["eid"])+','+self.pack["uname"])#which sales'order
         expire = self.get_argument("expire","")
         obexpire = self.get_argument("obexpire","")#order by expire time
         obamount = self.get_argument("obamount","")#order by order payment amount
@@ -471,10 +520,10 @@ class adminOrdersHandler(baseHandler):
         elif expire =="3":
             condition += " and o.o_expire_datetime between '%s' and '%s'" % (dt.strftime(dt.now(),"%Y-%m-%d"),dt.strftime(dt.now() + datetime.timedelta(7), "%Y-%m-%d"))
         # print count
-        if self.ctype in [3,4,5]:  # admin check all orders details
+        if self.pack["ctype"] in [3,4,5]:  # admin check all orders details
             if wsales:
                 ssql = "select sum(f_amount) from llidc_financial_log"
-                scond = "f_sales regexp '%s'" % self.eid
+                scond = "f_sales regexp '%s'" % self.pack["eid"]
                 sum = self.db.where(scond).getsum(ssql)
         else:
             sum = 0#admins except employees can check others orders details.
@@ -484,26 +533,47 @@ class adminOrdersHandler(baseHandler):
         else:
             pages = count // num + 1
         #ordering
+        self.pack["ifad"] = ifad
+        self.pack["sum"] = sum
+        self.pack["wsales"] = wsales
+        self.pack["asnum"] = asnum
+        self.pack["expire"] = expire
+        self.pack["ips"] = ips
+        self.pack["count"] = count
+        self.pack["active"] = "orders"
+        self.pack["pages"] = pages
+        self.pack["offset"] = offset + 1
+        self.pack["stype"] = stype
+        self.pack["obexpire"] = obexpire
+        self.pack["obamount"] = obamount
+        self.pack["obstart"] = obstart
+        self.pack["u_acc"] = u_acc
         if obexpire:
-            orders = self.db.where(condition).orderby(field1, obexpire).limit((offset) * 13, num).getmany(sql)
-            return self.render("admin/admin_orders.html", orders=orders, count=count, active="orders", pages=pages,offset=offset + 1,
-                               ctype=self.ctype, stype=stype, u_acc=u_acc, ips=ips, expire=expire,obexpire=obexpire, obamount="",
-                               asnum=asnum, obstart="",wsales=wsales,sum=sum,eid=self.eid,ifad=ifad)
+            self.pack["orders"] = self.db.where(condition).orderby(field1, obexpire).limit((offset) * 13, num).getmany(sql)
+            self.pack["obexpire"] = obexpire
+            self.pack["obamount"] = ""
+            self.pack["obstart"] = ""
+            return self.render("admin/admin_orders.html",**self.pack)
 
         elif obamount:
-            orders = self.db.where(condition).orderby(field2, obamount).limit((offset) * 13, num).getmany(sql)
-            return self.render("admin/admin_orders.html", orders=orders, count=count, active="orders", pages=pages,
-                               offset=offset + 1, ctype=self.ctype, eid=self.eid,stype=stype, u_acc=u_acc, ips=ips, expire=expire,
-                               obexpire="", obamount=obamount, asnum=asnum, obstart="",wsales=wsales,sum=sum,ifad=ifad)
+            self.pack["orders"] = self.db.where(condition).orderby(field2, obamount).limit((offset) * 13, num).getmany(sql)
+            self.pack["obexpire"] = ""
+            self.pack["obamount"] = obamount
+            self.pack["obstart"] = ""
+            return self.render("admin/admin_orders.html",**self.pack)
+
         elif obstart:
-            orders = self.db.where(condition).orderby(field3, obstart).limit((offset) * 13, num).getmany(sql)
-            return self.render("admin/admin_orders.html", orders=orders, count=count, active="orders", pages=pages,
-                               offset=offset + 1, ctype=self.ctype, stype=stype,eid=self.eid, u_acc=u_acc, ips=ips, expire=expire,
-                               obexpire="", obamount="", asnum=asnum, obstart=obstart,wsales=wsales,sum=sum,ifad=ifad)
+            self.pack["orders"] = self.db.where(condition).orderby(field3, obstart).limit((offset) * 13, num).getmany(sql)
+            self.pack["obexpire"] = ""
+            self.pack["obamount"] = ""
+            self.pack["obstart"] = obstart
+            return self.render("admin/admin_orders.html", **self.pack)
         else:
-            orders = self.db.where(condition).orderby(field,"desc").limit((offset) * 13, num).getmany(sql)
-            return self.render("admin/admin_orders.html",orders=orders,count=count,active="orders",pages=pages,offset=offset + 1, ctype=self.ctype,stype = stype,eid=self.eid,
-                               u_acc = u_acc,ips = ips,expire = expire,obexpire = "",obamount = "",asnum = asnum,obstart = "",wsales=wsales,sum=sum,ifad=ifad)
+            self.pack["orders"] = self.db.where(condition).orderby(field,"desc").limit((offset) * 13, num).getmany(sql)
+            self.pack["obexpire"] = ""
+            self.pack["obamount"] = ""
+            self.pack["obstart"] = ""
+            return self.render("admin/admin_orders.html",**self.pack)
 
     @tornado.web.authenticated
     def post(self):
@@ -562,9 +632,14 @@ class adminOrdersHandler(baseHandler):
                 cval = ( lastid, sales, cacc, ptype,payment, com, com_config[ckey], memo)
                 comrs = self.db.insertone(csql, cval)
                 if frs and comrs:
-                    self.finish(json_encode({"rs": "1026"}))  # successfully added the order
+                    self.pack["active"] = "add_orders"
+                    self.pack["curl"] = "/admin/add-orders/"
+                    self.pack["reason"] = "订单"
+                    return self.render("admin/admin_addredirect.html", **self.pack)
+                    #self.finish(json_encode({"rs": "1026"}))  # successfully added the order
         else:
-            self.finish(json_encode({"rs": "1027"}))  # fail to  add the order
+            self.send_error(500)
+            #self.finish(json_encode({"rs": "1027"}))  # fail to  add the order
 
 
 class adminOrderExportHandler(baseHandler):
@@ -572,7 +647,7 @@ class adminOrderExportHandler(baseHandler):
     def get(self):
         """join machines and orders table"""
         offset = int(self.get_argument("offset", "1")) - 1
-        wsales = self.get_argument("wsales", str(self.eid) + ',' + self.uname)  # which sales'order
+        wsales = self.get_argument("wsales", str(self.pack["eid"]) + ',' + self.pack["uname"])  # which sales'order
         expire = self.get_argument("expire", "")
         obexpire = self.get_argument("obexpire", "")  # order by expire time
         obamount = self.get_argument("obamount", "")  # order by order payment amount
@@ -609,7 +684,7 @@ class adminOrderExportHandler(baseHandler):
             condition += " and o.o_expire_datetime between '%s' and '%s'" % (
             dt.strftime(dt.now(), "%Y-%m-%d"), dt.strftime(dt.now() + datetime.timedelta(7), "%Y-%m-%d"))
         # print count
-        if self.ctype in [1, 2, 3, 4]:
+        if self.pack["ctype"] in [1, 2, 3, 4]:
             condition += " and o_auditors is not null"
         filename = wsales.split(',')[1]+"-"+dt.strftime(dt.now() + datetime.timedelta(3), "%Y-%m-%d %H:%M:%S")+".xlsx"
         #print filename
@@ -758,14 +833,15 @@ class adminOrderAuditHandler(baseHandler):
         condition = "o_id = '%s'"%oid
         rs = self.db.where(condition).updateone(sql)
         if rs:
-            return self.finish(json_encode({"rs":1032}))
+            return self.finish(json_encode({"rs":1063}))
         else:
-            return self.finish(json_encode({"rs":1033}))
+            return self.finish(json_encode({"rs":1064}))
 
 class adminPublishHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        return self.render("admin/admin_publish.html",ctype = self.ctype,eid=self.eid,active = "publish")
+        self.pack["active"] = "publish"
+        return self.render("admin/admin_publish.html",**self.pack)
 
     @tornado.web.authenticated
     def post(self):
@@ -795,7 +871,9 @@ class adminPublishHandler(baseHandler):
         values = (nid,title,html.html(),ntype)
         rs = self.db.insertone(sql,values)
         if rs:
-            return self.render("admin/admin_finish_publish.html",ctype=self.ctype,eid=self.eid,nid = nid,active="publish")
+            self.pack["nid"] = nid
+            self.pack["active"] = "publish"
+            return self.render("admin/admin_finish_publish.html",**self.pack)
         else:
             self.send_error(404)
 
@@ -818,13 +896,14 @@ class adminMachineModifyHandler(baseHandler):
         status = self.get_argument("status", "")  # machine status
         memo = self.get_argument("memo", "")  # machine's memo
         values = (ip,cnum,anum,onum,bw,wsales,status,config,memo)
+        #print values
         sql = "update llidc_machines set m_ip = '%s',m_cabinet_num = '%s',m_num = '%s',m_num_wy = '%s',m_bandwidth = '%s',m_sales = '%s',m_status = '%s',m_config = '%s',m_memo ='%s'"%values
         condition = "m_id = '%s'"%tid
         rs = self.db.where(condition).updateone(sql)
         if rs:
             return self.finish(json_encode({"rs":1032}))#successfully udpated
         else:
-            return self.finish(json_encode({"rs":1033}))#fail to update
+            return self.finish(json_encode({"rs":1033,'error':rs}))#fail to update
 
 class adminOrderCheckHandler(baseHandler):
     @tornado.web.authenticated
@@ -999,16 +1078,25 @@ class adminFinancialHandler(baseHandler):
             condition += " and f.f_log_dt < '%s'"%edt
         # print count
         count = self.db.where(condition).getsum(csql)  # total num of orders
+        self.pack["active"] = "financial"
+        self.pack["offset"] = offset + 1
+        self.pack["count"] = count
+        self.pack["stype"] = ptype
+        self.pack["ips"] = ips
+        self.pack["sdt"] = sdt
+        self.pack["edt"] = edt
+        self.pack["sid"] = sales
+        self.pack["oid"] = oid
+        self.pack["u_acc"] = u_acc
         if not count:
-            return self.render("admin/admin_financial.html", flogs='', count='', active="financial", pages='',
-                               offset='', ctype=self.ctype,eid=self.eid, stype=ptype, u_acc=u_acc, ips=ips, sdt=sdt, edt=edt,
-                               sid=sales, oid=oid)
+            self.pack["flogs"] = self.pack["count"] = self.pack["pages"] = self.pack["offset"] = ""
+            return self.render("admin/admin_financial.html",**self.pack)
         if count and count % num == 0:
-            pages = count // num
+            self.pack["pages"] = count // num
         elif count and count % num !=0:
-            pages = count // num + 1
-        flogs = self.db.where(condition).orderby(field, "desc").limit((offset) * 13, num).getmany(sql)
-        return self.render("admin/admin_financial.html", flogs=flogs, count=count, active="financial", pages=pages,offset=offset + 1, ctype=self.ctype, eid=self.eid,stype=ptype, u_acc=u_acc, ips=ips, sdt=sdt,edt=edt,sid=sales,oid=oid)
+            self.pack["pages"] = count // num + 1
+        self.pack["flogs"] = self.db.where(condition).orderby(field, "desc").limit((offset) * 13, num).getmany(sql)
+        return self.render("admin/admin_financial.html",**self.pack)
 
     @tornado.web.authenticated
     def post(self):
@@ -1043,7 +1131,9 @@ class adminStatisticsHandler(baseHandler):
             tmsum = self.db.where(tm_cond + i).getsum(csql)
             ss.append({"tmsum":tmsum,"name":em_sales[i],"lmsum":lmsum,"ecm":ecm,"percent":str((tmsum-lmsum)/lmsum*100)+"%"}) if tmsum and lmsum and ecm else ""
         ss.sort(key=lambda x:x['tmsum'],reverse=True)
-        return self.render("admin/admin_statistics.html",active="statistics",ss = ss,ctype = self.ctype,eid=self.eid)
+        self.pack["active"] = "statistics"
+        self.pack["ss"] = ss
+        return self.render("admin/admin_statistics.html",**self.pack)
 
 class adminFinancialEditHandler(baseHandler):
     @tornado.web.authenticated
@@ -1069,7 +1159,7 @@ class adminClientsHandler(baseHandler):
         cacc = self.get_argument("cacc", "")  # service type
         rname = self.get_argument("rname", "").encode("utf-8")  # service type
         mobile = self.get_argument("mobile", "")  # which ip
-        wsales = self.get_argument("wsales", str(self.eid) + ',' + self.uname)  # which sales'order
+        wsales = self.get_argument("wsales", str(self.pack["eid"]) + ',' + self.pack["uname"])  # which sales'order
         qq = self.get_argument("qq", "")  # client account
         sql = "select * from llidc_clients"
         csql = "select count(*) from llidc_clients"
@@ -1091,29 +1181,37 @@ class adminClientsHandler(baseHandler):
             condition += " and f_log_dt > '%s'" % qq
         if wsales:
             condition += " and c_belongsto regexp '%s'" % wsales.split(',')[0]
-        if not self.ctype in [5]:#admin check all clients
-            condition += " and c_belongsto regexp '%s'"%self.eid
+        if not self.pack["ctype"] in [5]:#admin check all clients
+            condition += " and c_belongsto regexp '%s'"%self.pack["eid"]
         if ctype == "2":#check unbound clients
             condition += " and c_belongsto is null"
         count = self.db.where(condition).getsum(csql)  # total num of orders
+        self.pack["count"] = count
+        self.pack["active"] = "clients"
+        self.pack["offset"] = offset+1
+        self.pack["cacc"] = cacc
+        self.pack["rname"] = rname
+        self.pack["mobile"] = mobile
+        self.pack["qq"] = qq
+        self.pack["wsales"] = wsales
         if not count:
-            return self.render("admin/admin_clients.html", cs="", count=count, pages="", active="clients",
-                               offset="", ctype=self.ctype, eid=self.eid,cacc=cacc, rname=rname, mobile=mobile, qq=qq,wsales=wsales)
+            self.pack["cs"] = self.pack["pages"] = self.pack["offset"] = ""
+            return self.render("admin/admin_clients.html", **self.pack)
         if count and count % num == 0:
             pages = count // num
         elif count and count % num != 0:
             pages = count // num + 1
-
+        self.pack["pages"] = pages
         if ctype == "1":
             cs = self.db.orderby(field, "desc").limit((offset) * 13, num).getmany(sql+condition)
         else:
             cs = self.db.where(condition).orderby(field, "desc").limit((offset) * 13, num).getmany(sql)
-        return self.render("admin/admin_clients.html", cs=cs, count=count, pages = pages,active="clients",offset = offset+1,ctype=self.ctype, eid=self.eid,cacc=cacc, rname=rname, mobile=mobile, qq=qq,wsales=wsales)
+        self.pack["cs"] = cs
+        return self.render("admin/admin_clients.html",**self.pack)
 
     @tornado.web.authenticated
     def post(self):
         pass
-
 
 class clientRemoveHandler(baseHandler):
     @tornado.web.authenticated
@@ -1157,8 +1255,9 @@ class clientModifyHandler(baseHandler):
 class adminResetPwdHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        if self.ctype in [3, 4, 5]:
-            return self.render("admin/admin_modify_pwd.html",ctype=self.ctype,uname=self.uname,active = "index",eid = self.eid)
+        self.pack["active"] = "index"
+        if self.pack["ctype"] in [3, 4, 5]:
+            return self.render("admin/admin_modify_pwd.html",**self.pack)
         else:
             self.send_error(403)
 
@@ -1193,12 +1292,14 @@ class adminResetPwdHandler(baseHandler):
 class adminMpRedirectHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        return self.render("admin/admin_pwd_redirect.html",active="index",ctype=self.ctype,eid= self.eid)
+        self.pack["active"] = "index"
+        return self.render("admin/admin_pwd_redirect.html",**self.pack)
 
 class adminModifyPwdRedirectHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        return self.render("admin/admin_mpresult.html",active="index",ctype=self.ctype,eid= self.eid)
+        self.pack["active"] = "index"
+        return self.render("admin/admin_mpresult.html",**self.pack)
 
 class adminClientBindHandler(baseHandler):
     @tornado.web.authenticated
@@ -1216,8 +1317,9 @@ class adminClientBindHandler(baseHandler):
 class adminAddHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        if self.ctype in [3,4,5]:
-            return self.render("admin/admin_add.html",**{"ctype":self.ctype,"eid":self.eid,"active":"index"})
+        self.pack["active"] = "index"
+        if self.pack["ctype"] in [3,4,5]:
+            return self.render("admin/admin_add.html",**self.pack)
         else:
             self.send_error(403)
 
@@ -1245,21 +1347,28 @@ class adminAddHandler(baseHandler):
 class adminAddRedirectHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        return self.render("admin/admin_addredirect.html",ctype=self.ctype,eid=self.eid,active="index")
+        self.pack["reason"] = "账户"
+        self.pack["curl"] = "/admin/add/"
+        self.pack["active"] = "index"
+        return self.render("admin/admin_addredirect.html",**self.pack)
 
 class adminAddSuccessHandler(baseHandler):
     @tornado.web.authenticated
     def get(self):
-        return self.render("admin/admin_addsuccess.html",ctype=self.ctype,eid=self.eid,active="index")
+        self.pack["reason"] = self.get_query_argument("rs")
+        self.pack["curl"] = self.get_query_argument("cu")
+        self.pack["active"] = "index"
+        return self.render("admin/admin_addsuccess.html",**self.pack)
 
 #*********************************************************************************************client part
 class clientBaseHandler(baseHandler):
     def __init__(self,application,*args, **kwds):
         tornado.web.RequestHandler.__init__(self, application,*args, **kwds)
-        self.ua = self.request.headers.get("User-Agent")
-        self.path = self.request.uri
-        x_real_ip = self.request.headers.get("X-Real-IP")
-        self.remote_ip = x_real_ip or self.request.remote_ip  # when use nginx we get x_real_ip or we just get remote_ip
+        self.pack={}
+        self.pack["ua"] = self.request.headers.get("User-Agent")
+        self.pack["path"] = self.request.uri
+        self.pack["x_real_ip"] = self.request.headers.get("X-Real-IP")
+        self.pack["self.remote_ip"] = self.pack["x_real_ip"] or self.request.remote_ip  # when use nginx we get x_real_ip or we just get remote_ip
 
     def get_current_user(self):
         """{current_user} in template,request:self.current_user"""
@@ -1277,7 +1386,8 @@ class clientAuthHandler(clientBaseHandler):
         imglist = imgc.saveImg()
         thiscc = imglist[1]  # 当前的验证码
         self.set_secure_cookie("cc",thiscc,expires_days=1)
-        return self.render("client/client_auth.html",acc=imglist[0])
+        self.pack["acc"] = imglist[0]
+        return self.render("client/client_auth.html",**self.pack)
 
     def post(self):
         uacc = self.get_argument("uacc")
@@ -1346,7 +1456,8 @@ class clientRegHandler(clientBaseHandler):
         imglist = imgc.saveImg()
         thiscc = imglist[1]  # 当前的验证码
         self.set_secure_cookie("cc",thiscc,expires_days=1)
-        return self.render("client/client_reg.html",acc=imglist[0])
+        self.pack["acc"] = imglist[0]
+        return self.render("client/client_reg.html",**self.pack)
 
     def post(self):
         uacc = self.get_argument("uacc")#user account ,6 nums
@@ -1393,12 +1504,14 @@ class clientCheckMobileHandler(clientBaseHandler):
 class clientRedirectHandler(clientBaseHandler):
     @tornado.web.authenticated
     def get(self):
-        return self.render("client/client_redirect.html",active="orders")
+        self.pack["active"] = "orders"
+        return self.render("client/client_redirect.html",**self.pack)
 
 class clientLgredirectHandler(clientBaseHandler):
     @tornado.web.authenticated
     def get(self):
-        return self.render("client/client_lgredirect.html",active="orders")
+        self.pack["active"] = "orders"
+        return self.render("client/client_lgredirect.html",**self.pack)
 
 class clientPanelHandler(clientBaseHandler):
     @tornado.web.authenticated
@@ -1414,16 +1527,23 @@ class clientPanelHandler(clientBaseHandler):
         count = self.db.where(cond).getsum(sql)
         num = 13
         field = 'o_id'
+        self.pack["count"] =count
+        self.pack["active"] = "orders"
+        self.pack["offset"] = offset+1
+        self.pack["ips"] = ips
+        self.pack["sdt"] = sdt
+        self.pack["edt"] = edt
+        self.pack["oid"] = oid
         if not count:
-            return self.render("client/client_mypanel.html", orders='', count='', active="orders", pages='',offset='',ips=ips, sdt=sdt,
-                               edt=edt, oid=oid)
+            self.pack["orders"] = self.pack["count"] = self.pack["pages"] = self.pack["offset"] = ""
+            return self.render("client/client_mypanel.html",**self.pack)
         if count and count % num == 0:
-            pages = count // num
+            self.pack["pages"] = count // num
         elif count and count % num != 0:
-            pages = count // num + 1
+            self.pack["pages"] = count // num + 1
         orders = self.db.where(cond).orderby(field, "desc").limit((offset) * 13, num).getmany(sql)
-        return self.render("client/client_mypanel.html", orders=orders, count=count, active="orders", pages=pages,
-                           offset=offset + 1,ips=ips,sdt=sdt, edt=edt, oid=oid)
+        self.pack["orders"] = orders
+        return self.render("client/client_mypanel.html",**self.pack)
 
 class clientQuitHandler(clientBaseHandler):
     @tornado.web.authenticated

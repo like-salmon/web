@@ -28,7 +28,7 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 ERR: 无法加载模块:Js
 
-[ 2017-01-03T11:33:50+08:00 ] 127.0.0.1 /js/custom.js
+[ 2017-01-03T11:33:50+08:00 ] 127.0.0.1 /js/frontend.js
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
@@ -64,7 +64,7 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 ERR: 无法加载模块:Img
 
-[ 2017-01-03T11:33:50+08:00 ] 127.0.0.1 /js/custom.js
+[ 2017-01-03T11:33:50+08:00 ] 127.0.0.1 /js/frontend.js
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
@@ -112,7 +112,7 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 ERR: 无法加载模块:Js
 
-[ 2017-01-03T11:52:41+08:00 ] 127.0.0.1 /js/custom.js
+[ 2017-01-03T11:52:41+08:00 ] 127.0.0.1 /js/frontend.js
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
@@ -160,7 +160,7 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
 ERR: 无法加载模块:Img
 
-[ 2017-01-03T11:52:41+08:00 ] 127.0.0.1 /js/custom.js
+[ 2017-01-03T11:52:41+08:00 ] 127.0.0.1 /js/frontend.js
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]

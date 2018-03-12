@@ -68,7 +68,7 @@
             onClose: function () {
                 $(document).on("click", ".cfclose,.modal-bg.active", function () {
                     $(".modal-bg.active,.modal-ct-cf.active").removeClass("active");
-                    Object.keys(obj).indexOf("onClose") && typeof obj.onClose === "function" ? obj.onClose() : "";//cancel callback
+                    Object.keys(obj).indexOf("onClose") && typeof obj.onClose === "function" ? obj.onClose() : "";//close callback
                 });
             },
             displayModal: function () {
@@ -361,7 +361,7 @@
 
 }($);
 +function ($) {
-    $.processForm = function (selector, type) {
+    $.displayForm = function (selector, type) {
         $(selector).empty();
         var p = /\[(.*)\]/;
         var cu = p.exec($("#wu").text())[1];
@@ -442,7 +442,7 @@
 +function ($) {
     $.globaltips = function (type, text, closecb) {
         var html = "";
-        html += "<div class='tmodal'></div>";
+        html += "";
         if (type == "success") {
             html += "<div class='tipct'><i class='fa fa-check-circle-o fa-3x'></i><p class='desc'>" + text + "</p></div>";
         }
@@ -452,7 +452,6 @@
         !$(".tmodal").length ? $("body").append(html) : "";
         $(".tmodal").addClass("active");
         window.setTimeout(function () {
-            $(".tmodal").removeClass("active").remove();
             $(".tipct").remove();
             typeof  closedb == "function" ? closecb.call() : "";
         }, 2000);
@@ -596,13 +595,6 @@
         //on remove machine
         $.removems();
         $.getCaptcha(".ccha");
-        $("#nav ul li.add-machines").click(function () {
-            $(".modal-ct,.modal-bg").removeClass("active");
-            $(this).addClass("active").siblings().removeClass("active");
-            $.processForm("#add_machines .data", "1");
-            $(".modal-ct-s-1,.modal-bg").toggleClass("active");
-            //$(".modal-ct-s-1.active").css("top", $(window).scrollTop() + 29);
-            $("body").css("overflow", "hidden");
             //check if ip exists
             $.parseip = function(data){
                 var data = typeof data == "object"?data:JSON.parse(data);
@@ -621,7 +613,7 @@
             $.checkip = function (tinput){
                     var ip = tinput.val().trim();
                     var that = tinput;
-                    var pat = /^(([1-9]?\d|1\d\d|2[0-5][0-5]|2[0-4]\d)\.){3}([1-9]?\d|1\d\d|2[0-5][0-5]|2[0-4]\d)/g;
+                    var pat = /((?:(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d))))/g;
                     //check if it is ip
                     if (pat.test(ip)) {
                         //check if chinese commas there
@@ -653,6 +645,7 @@
                             }, "json");
                         }
                     }else{
+                        !$("#add_machines .frow.ips .tips span").text().length?$.tips("#add_machines .frow.ips .tips", "IP格式不对!", 2):"";
                          $("#add_machines .m_addbtn").css({"background-color":"#ccc"}).attr("disabled",true);
                     }
                 };
@@ -696,33 +689,14 @@
                     },"json")
                 }
             }});
-            //取消模态框vnbtn
-            $(".modal-bg.active,.mclose").on("click.last", function () {
-                $("body").css("overflow", "auto");
-                $(".modal-ct").animate({top: -200, opacity: 0.4}, 200, function () {
-                    $(this).fadeOut();
-                    $(".modal-bg.active,div[class^=modal-ct].active").removeClass("active");
-                    if (window.location.search.indexOf("m") != -1) {
-                        console.log("here");
-                        window.location.href = "/admin/all-machines/" + window.location.search;
-                    } else {
-                        window.location.href = "/admin/all-machines/?mtype=0";
-                    }
-                });
 
-            });
-
-        });
-        $("#nav ul li.add-orders").click(function () {
             //restore modal status
-            $(".modal-ct,.modal-bg").removeClass("active");
-            $(this).addClass("active").siblings().removeClass("active");
-            $.processForm("#add_orders .data", "2");
+
+            //$.displayForm("#add_orders .data", "2");
             //datepicker
             $.datepicker("#add_orders input[name=sdt]");
-            $(".modal-ct-s-2,.modal-bg").toggleClass("active");
             //$(".modal-ct-s-2.active").css("top", $(window).scrollTop() + 29);
-            $("body").css("overflow", "hidden");
+            //$("body").css("overflow", "hidden");
             $.parseip = function(data){
                 var data = typeof data == "object"?data:JSON.parse(data);
                 if (data['rs'] == "1044") {
@@ -775,6 +749,7 @@
                             }, "json");
                         }
                     }else{
+                        !$("#add_orders .frow.ips .tips span").text().length?$.tips("#add_orders .frow.ips .tips", "IP格式不对!", 2):"";
                          $("#add_orders .o_addbtn").css({"background-color":"#ccc"}).attr("disabled",true);
                     }
                 };
@@ -785,25 +760,9 @@
                 var tinput = $(this);
                 $.checkip(tinput);
             }});
-            //取消模态框vnbtn
-            $(".modal-bg.active,.mclose").on("click.last", function () {
-                $("body").css("overflow", "auto");
-                $(".modal-ct-s-2").animate({top: -200, opacity: 0.4}, 200, function () {
-                    $(this).fadeOut();
-                    $(".modal-bg.active,div[class^=modal-ct].active").removeClass("active");
-                    if (!window.location.search.indexOf("m")) {
-                        window.location.href = "/admin/orders/" + window.location.search;
-                    } else {
-                        window.location.href = "/admin/orders/";
-                    }
-                });
-
-            });
-        });
-    });
 
     //submit new machine info
-    $(".m_addbtn").click(function (e) {
+    /*$(".m_addbtn").click(function (e) {
         e.preventDefault();
         //check if input value is empty
         var empty = $.checkempty("#add_machines", "机器信息不能为空");
@@ -816,7 +775,7 @@
                 if (data["rs"] == "1024") {
                     $(".modal-ct-s-1 .modal-dt").animate({scrollTop: 0}, function () {
                         $("#add_machines .data").empty();
-                        $.processForm("#add_machines .data", "1");
+                        $.displayForm("#add_machines .data", "1");
                         $(".loadding").hide();
                     });
                 } else if (data.rs == "1025") {
@@ -824,8 +783,8 @@
                 }
             });
         }
-    });
-    $(".o_addbtn").click(function (e) {
+    });*/
+    /*$(".o_addbtn").click(function (e) {
         e.preventDefault();
         //check if input value is empty
         var empty = $.checkempty("#add_orders", "订单信息不能为空");
@@ -837,7 +796,7 @@
                     $.tips("#add_orders .o_addbtn ~ .tips", "订单提交成功.", "1");
                     $(".modal-ct-s-2 .modal-dt").animate({scrollTop: 0}, function () {
                         $("#add_orders .data").empty();
-                        $.processForm("#add_orders .data", "2");
+                        $.displayForm("#add_orders .data", "2");
                         $(".loadding").hide();
                     });
                 } else if (data.rs == "1027") {
@@ -845,7 +804,7 @@
                 }
             });
         }
-    });
+    });*/
     $(".orders_tb tr td .modify").click(function () {
         var oid = $(this).parents("tr").find(".tid").text().trim();
         var upower = parseInt($("#power").val());
@@ -985,73 +944,81 @@
             }
         });
     });
+        (function($){
+            $.modifyms=function(){
+                function res(that,data){
+                    if (data["rs"] == "1032") {
+                        //successfully modify the machine record
+                        that.text("已修改").removeClass("modify");
+                        window.setTimeout(function(){
+                            that.text("编辑").addClass("edit");
+                        },2000)
+                    } else if (data["rs"] == "1033") {
+                        //successfully modify the machine record
+                        //console.error(data.error);
+                        that.text("提交失败").removeClass("modify");
+                    }
+                }
 
-    +function ($) {
-        $.modifyMs = function () {
-            function modifyms() {
-                $(".machines_tb tr td .modify").off().click(function () {
+                $(".machines_tb tr td .modify").click(function () {
+                    //console.log("click");
                     var d = {};
-                    $(this).parents("tr").find("input").each(function (i, t) {
+                    var $this = this;
+                    $($this).parents("tr").find("input").each(function (i, t) {
                         //restore to disabled status
                         $(t).attr("disabled", true);
                         d[$(t).attr("name")] = $(t).val();
                     });
                     //restore select status
-                    var tr = $(this).parents("tr");
-                    var sem = tr.find("#wsales").val();
-                    var sst = tr.find("#status").val();
+                    var tr = $($this).parents("tr");
+                    var sem = $("select[name='wsales']").val();
+                    console.log(sem);
+                    var sst = $("select[name='status']").val();
+                    console.log(sst);
+                    $("select[name='wsales'],select[name='status']").on("change",function(){console.log($("select[name='wsales'],select[name='status']").val())})
                     //restore
-                    tr.find(".wstd").empty().text(sem.split(',')[1]);
-                    tr.find(".std").empty().text(sst.split(',')[1]);
-
-                    d["tid"] = $(this).parents("tr").find(".tid").text().trim();
+                    tr.find(".wstd").empty().html('<input type="text" disabled="disabled" id="wsales" value="'+sem.split(",")[1]+'"/>');
+                    tr.find(".std").empty().html('<input type="text" disabled="disabled" id="status" value="'+sst.split(",")[1]+'"/>');
+                    d["tid"] = $($this).parents("tr").find(".tid").text().trim();
                     d["_xsrf"] = $.getCookie("_xsrf");
                     d['wsales'] = sem;
                     d['status'] = sst;
-                    var that = $(this);
-                    if (Object.keys(d).length) {
-                        $(this).siblings(".loading").show();
-                        $.post("/admin/machine/modify", d, function (data) {
-                            that.siblings(".loading").hide();
-                            var data = JSON.parse(data);
-                            $(this).siblings(".loading").hide();
-                            if (data["rs"] == "1032") {
-                                //successfully modify the machine record
-                                that.text("已修改").removeClass("modify");
-
-
-                            } else if (data["rs"] == "1033") {
-                                //successfully modify the machine record
-                                console.error(data);
-                                that.text("提交失败").removeClass("modify");
-                            }
-                        });
-                        window.setTimeout(function () {
-                            that.text("编辑").addClass("edit");
-                            $(".machines_tb tr td .edit").off().click(function () {
-                                that.text("修改").removeClass("edit").addClass("modify");
-                                $(this).parents("tr").find("input").not("input[name=status],input[name=wsales],input[name=loca]").each(function (i, t) {
-                                    $(t).attr("disabled", false);
-                                });
-                                $.modifyMs();
-                            });
-                        }, 2000)
-                    }
+                    var that = $($this);
+                    var p =new Promise(function(res,rej){
+                    $.ajax(
+                            {
+                                url:"/admin/machine/modify",
+                                data:d,
+                                dataType:"json",
+                                method:"post",
+                                success:function(data){
+                                    that.siblings(".loading").hide();
+                                    res(that,data)}
+                        }
+                        )
                 });
-            }
+                    if (Object.keys(d).length) {
+                        $($this).siblings(".loading").show();
+                        p.then(function(){
+                            $.modifyMs();
+                        });
+                    }
 
-            $(".machines_tb tr td .edit").off().click(function () {
+        })
+            }})($);
+    +function ($) {
+        $.modifyMs = function () {
+            $(".machines_tb tr td .edit").click(function (){
                 $(this).text("修改").removeClass("edit").addClass("modify");
                 $(this).parents("tr").find("input").not("input[name=loca]").each(function (i, t) {
                     $(t).attr("disabled", false);
                 });
-                var ehtml = '<select id="wsales"> <option value=""></option> <option value="18,劳兴华">劳兴华</option> <option value="19,陶秋梅">陶秋梅</option> <option value="20,唐晓珍">唐晓珍</option> <option value="21,黄小恩">黄小恩</option> <option value="22,廖超">廖超</option> </select>';
-                var shtml = "<select id='status'><option value='a,空闲' selected>空闲</option><option value='b,租用'>租用</option><option value='c,托管'>托管</option><option value='d,试用'>试用</option></select>";
+                var ehtml = '<select id="wsales" name="wsales"><option value="18,劳兴华">劳兴华</option> <option value="19,陶秋梅">陶秋梅</option> <option value="20,唐晓珍">唐晓珍</option> <option value="21,黄小恩">黄小恩</option> <option value="22,廖超">廖超</option> </select>';
+                var shtml = "<select id='status' name='status'><option value='a,空闲'>空闲</option><option value='b,租用' selected>租用</option><option value='c,托管'>托管</option><option value='d,试用'>试用</option></select>";
                 $(this).parents("tr").find(".wstd").empty().html(ehtml);
                 $(this).parents("tr").find(".std").empty().html(shtml);
-                modifyms()
+                $.modifyms();
             });
-            modifyms()
         }
     }($);
     $.modifyMs();
@@ -1227,11 +1194,13 @@
             $.post("/admin/client/edit/",{"cid":cid,"rname":rname,"mobile":mobile,"idc":idc,"qq":qq,"memo":memo,"_xsrf":$.getCookie("_xsrf"),"add":add},function(data){
                 if(data['rs'] == "1059"){
                     $(".clients_tb tr td span.modify").text("已提交");
-                    window.setTimeout(function(){
+                    window.location.href=window.location.href
+                    /*window.setTimeout(function(){
                        $(".clients_tb tr td span.modify").text("编辑").removeClass("modify").addClass("edit");
                        tr.find("input[type=text]").attr("disabled",true).css({"border":"0"});
-                       $.livemodify();
-                    },2500)
+                       window.location.href=window.location.href;
+                       //$.livemodify();
+                    },2500)*/
                 }else if(data['rs'] == "1060"){
                     $(".clients_tb tr td span.modify").removeClass("modify").text("提交出错");
                     console.error(a,b,c,"修改提成数据出错！");
@@ -1245,6 +1214,7 @@
         var that = $(this);
         that.addClass("modify").text("修改");
         tr.find("input[name=rname],input[name=mobile],input[name=idc],input[name=qq],input[name=memo],input[name=add]").attr("disabled",false).css({"border":"1px solid red"});
+        //window.location.href=window.location.href;
         modifyagain();
     });
     }
@@ -1262,11 +1232,13 @@ $.livemodify();
                 var data = JSON.parse(data);
                 if(data['rs'] == "1040"){
                     $(".financial_tb tr td span.modify").text("已提交");
-                    window.setTimeout(function(){
+                    window.location.href=window.location.href
+                    /*window.setTimeout(function(){
                        $(".financial_tb tr td span.modify").text("编辑").removeClass("modify").addClass("edit");
                        tr.find("input[name=com]").attr("disabled",true).css({"border":"0"});
-                       $.modifyComs();
-                    },2500)
+                       window.location.href=window.location.href;
+                       //$.modifyComs();
+                    },2500)*/
                 }else if(data['rs'] == "1041"){
                     $(".financial_tb tr td span.modify").removeClass("modify").text("已提交");
                     console.error(a,b,c,"修改提成数据出错！");
@@ -1280,6 +1252,7 @@ $.livemodify();
         var that = $(this);
         that.addClass("modify").text("修改");
         tr.find("input[name=com]").attr("disabled",false).css({"border":"1px solid red"});
+        //window.location.href=window.location.href;
         modifyagain();
     });
     }
@@ -1304,13 +1277,10 @@ $.modifyComs();
         var len = $(this).find("input").val().length*13;
         if($(this).parents("table").hasClass("orders_tb")){
             len>sw?$(this).find("input").addClass("odresp"):"";
-
         }else{
             len>sw?$(this).find("input").addClass("resp"):"";
-
         }
         $("body").css("overflow-x","hidden");
-
     },function(){
         $(this).find("input").removeClass("resp odresp");
         $("body").css("overflow-x","auto");
@@ -1517,4 +1487,5 @@ $.addclient();
          window.location.href = $(this).attr("href");
      }
     })
+        });
 }($);

@@ -86,7 +86,7 @@ margin-top: 34px;
     -webkit-transition: all 5s ease-in-out;
     -o-transition: all 5s ease-in-out;
     width: 100%;
-    padding-bottom: 100%; /*fake height*/
+    padding-bottom: 100%; /* fill up the container.*/
 }
 
 .adminlg:hover, .adminlg:focus {
@@ -609,7 +609,7 @@ form#oform .sbtn {
     width: 65.5% !important;
     padding: 10px 12px !important;
     text-align: left !important;
-    margin-left: -58px !important;
+    margin-left: -44px !important;
     margin-top: -20px !important;
     height: 41px !important;
     background: #dfe6cf !important;
@@ -653,17 +653,20 @@ form#oform .sbtn {
     border-bottom: 1px solid #ccc;
     padding-bottom: 6px;
 }
+
 #pform .frow input:focus{
     border:0;
     outline: 0;
     border-bottom: 1px solid #ccc;
 }
+
 #pform .frow #ntype{
     width: 50px;
     border: 1px solid #ccc;
     margin-left: 13px;
     padding: 5px 0px;
 }
+
 #pform .frow input[type=submit]{
         padding: 10px 24px;
     width: 120px;
@@ -671,6 +674,7 @@ form#oform .sbtn {
     background: #17578d;
     color: #fff;
 }
+
 #pform .frow.sm{
     text-align: right;
 }
@@ -682,6 +686,17 @@ form#oform .sbtn {
 #soform .data{
     min-height: 260px;
 }
+
+/* add machine form*/
+form#add_machines,form#add_orders {
+    margin-top: 29px;
+    /* text-align: center; */
+    padding-top: 35px;
+    margin: 0 auto;
+    /* position: absolute; */
+    width: 700px;
+}
+
 /* footer */
 
 .wrapper{

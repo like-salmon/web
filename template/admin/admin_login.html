@@ -13,11 +13,9 @@
     <link rel="stylesheet" href="{{static_url("css/public.css")}}"/>
 </head>
 <style>
-
     body {
         overflow: hidden;
     }
-
 </style>
 <body>
 <div class="content adminlg">
@@ -59,6 +57,22 @@
     for(var i in obj){
         $.validateField.call(null,obj[i]);
     }
+    $(".lgbtn").click(function(e){
+        //encrypt pwd if possible
+       e.preventDefault();
+       $.post("/admin/",$("#adlgform").serialize(),function(data){
+          d = JSON.parse(data);
+          if(d.rs =="1"){
+              if(d.url){
+                  window.location.href=d.url;
+              }else if(d.next){
+                  window.location.href=d.next;
+              }
+          }else if(d.rs=="0"){
+              $(".tips.cctips").hasClass("cr")?$(".tips.cctips").removeClass("cr").text("账号密码错误，请重新输入!"):$(".tips.cctips").text("账号密码错误，请重新输入!");
+          }
+       });
+    });
 </script>
 </body>
 </html>

@@ -72,7 +72,6 @@
         {% if orders %}
         {% from datetime import datetime %}
         {% from datetime import timedelta as td %}
-
         {% for i in orders %}
         {% set k += 1 %}
             <tr class="olist">
@@ -88,9 +87,9 @@
                 <input type="hidden" name="ptype" id="ptype" value="{{i[10] if i[10] else ''}}"/>
                 <input type="hidden" name="idcloca" class="idcloca" value="{{i[28] if i[28] else ''}}"/>
                 {#<td><input type="text" disabled="disabled" value="{{i[3]}}"/></td>#}
-                <td><input type="text" disabled="disabled" value="{{i[35]}}"/></td>
-                <td><input type="text" disabled="disabled" value="{{i[33].split(',')[1]}}"/></td>
-                <td><input type="text" disabled="disabled" value="{{i[28].split(',')[1] if i[27] else ''}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[34]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[32].split(",")[1]}}"/></td>
+                <td><input type="text" disabled="disabled" value="{{i[27].split(',')[1] if i[27] else ''}}"/></td>
                 <td><span class="modify">详情</span>|{% if ctype in [5] %}<span class="renew">续期</span>|{% end %}{% if datetime.strftime(datetime.now(),'%Y/%m/%d') > datetime.strftime(i[5],'%Y/%m/%d') %}{% if ctype in [5] %}<span class="release" style="color:red;">回收</span>|{% end %}{% end %}<span class="sorder">子订单</span>|<span class="remove">删除</span></td>
             </tr>
         {% end %}
