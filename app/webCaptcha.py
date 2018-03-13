@@ -20,11 +20,7 @@ class webCaptcha(ImageCaptcha):
     @classmethod
     def getRandomNum(self,n=4):
         """生成四位随机字符,数字和字母"""
-        a = []
-        cset = [chr(i) for i in range(1, 256) if chr(i).isalpha() or chr(i).isdigit()]
-        for i in range(1, n + 1):
-            a.append(random.choice(cset))
-        return "".join(a)
+        return "".join(random.sample([chr(i) for i in range(49, 123) if chr(i).isalnum()], n))
     def saveImg(self):
         #获取当前的图片路径,当用户提交正确的验证码需要清空当前captcha图片
         #print os.getcwd()#根目录

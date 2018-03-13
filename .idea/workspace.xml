@@ -25,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Handlers.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Handlers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/Handlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="884" column="30" lean-forward="true" selection-start-line="884" selection-start-column="30" selection-end-line="884" selection-end-column="30" />
+            <state relative-caret-position="100">
+              <caret line="959" column="0" lean-forward="true" selection-start-line="959" selection-start-column="0" selection-end-line="959" selection-end-column="0" />
               <folding>
                 <element signature="e#37#68#0" expanded="true" />
                 <marker date="1520391159963" expanded="true" signature="1462:1491" ph="SELECT * FRO... llidc_employees" />
@@ -103,6 +103,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/admin/admin.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1075">
+              <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="llidcspider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/llidcspider.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,11 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webCaptcha.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="webCaptcha.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/webCaptcha.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+            <state relative-caret-position="1026">
+              <caret line="45" column="63" lean-forward="true" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -179,30 +199,8 @@
         <entry file="file://$PROJECT_DIR$/static/js/frontend.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="675">
-              <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+              <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unslider-min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/unslider-min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="5909" lean-forward="false" selection-start-line="0" selection-start-column="5909" selection-end-line="0" selection-end-column="5909" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="summernote.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/summernote.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="25865" lean-forward="false" selection-start-line="4" selection-start-column="25865" selection-end-line="4" selection-end-column="25865" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -285,7 +283,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/template/error.html" />
         <option value="$PROJECT_DIR$/script/updatedb.py" />
         <option value="$PROJECT_DIR$/template/admin/admin_panel.html" />
@@ -336,6 +333,7 @@
         <option value="$PROJECT_DIR$/template/index.html" />
         <option value="$PROJECT_DIR$/static/js/admin.js" />
         <option value="$PROJECT_DIR$/handlers/Handlers.py" />
+        <option value="$PROJECT_DIR$/app/webCaptcha.py" />
       </list>
     </option>
   </component>
@@ -366,6 +364,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -577,7 +576,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -934,7 +932,7 @@
     <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20236814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25995696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -968,13 +966,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/script/updatedb_addclient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/contact.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10575">
@@ -1106,13 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-891">
           <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/admin/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="688" column="0" lean-forward="true" selection-start-line="688" selection-start-column="0" selection-end-line="688" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1270,7 +1254,7 @@
     <entry file="file://$PROJECT_DIR$/static/js/frontend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
-          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1327,18 +1311,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/webCaptcha.py">
+    <entry file="file://$PROJECT_DIR$/static/css/admin/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+        <state relative-caret-position="-1075">
+          <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/Handlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="884" column="30" lean-forward="true" selection-start-line="884" selection-start-column="30" selection-end-line="884" selection-end-column="30" />
+        <state relative-caret-position="100">
+          <caret line="959" column="0" lean-forward="true" selection-start-line="959" selection-start-column="0" selection-end-line="959" selection-end-column="0" />
           <folding>
             <element signature="e#37#68#0" expanded="true" />
             <marker date="1520391159963" expanded="true" signature="1462:1491" ph="SELECT * FRO... llidc_employees" />
@@ -1408,6 +1400,14 @@
             <marker date="1520391159963" expanded="true" signature="65710:65823" ph="select * fro... llidc_orders" />
             <marker date="1520391159963" expanded="true" signature="65841:65959" ph="select sum(*... llidc_orders" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/webCaptcha.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="45" column="63" lean-forward="true" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
