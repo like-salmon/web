@@ -2,3 +2,9 @@
 !static/img/favicon.ico
 !static/img/logo.png
 !static/img/search.png
+handlers
+app
+config
+spider
+
+
