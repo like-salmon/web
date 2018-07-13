@@ -1,5 +1,0 @@
-{% extends "admin_panel.html" %}
-
-{% block content %}
-<p>新闻发布成功，<a href="/news/{{nid}}">查看已发布新闻</a>,或者<a href="/admin/publish/">返回继续发布</a></p>
-{% end %}

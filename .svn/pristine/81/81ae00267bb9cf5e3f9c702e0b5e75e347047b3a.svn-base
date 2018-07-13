@@ -1,5 +1,0 @@
-<div id="nav">
-    <ul>
-        <li class="{% if active == 'orders'%}active{% end %}"><a href="/client/overview/"><i class="fa fa-calendar-check-o fa-lg"></i><span>我的订单</span></a></li>
-    </ul>
-</div>
